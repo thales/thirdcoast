@@ -1,0 +1,29 @@
+<div class="rightCol">
+
+<h1>New podcast item</h1>
+
+<% form_for [:admin, @podcast_item], :html => { :multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :file %><br />
+    <%= f.file_field :file %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_airings_path %>
+</div>
+

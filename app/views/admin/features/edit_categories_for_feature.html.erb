@@ -1,0 +1,22 @@
+<div class="rightCol">
+<h1>Editing categories for </h1> <%= @feature.title  %>
+
+<% form_for [:admin,@feature] do |f|%>
+
+  <%= hidden_field_tag "feature[category_ids][]", "" %>
+  <%= hidden_field_tag "ref", params[:ref] %>
+<div>
+    <% for category in Category.find(:all, :order => 'name') %>
+    <div>
+   <%= check_box_tag "feature[category_ids][]", category.id,
+                   @feature.categories.include?(category) %>
+    <%= category.name %>
+   <% end -%>
+   </div>
+  </div>
+  <p>
+  <%= f.submit 'Update' %>
+  <%= link_to "cancel", admin_feature_path(@feature) %>
+  </p>
+<% end %>
+</div>    

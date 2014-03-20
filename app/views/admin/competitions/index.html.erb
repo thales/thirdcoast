@@ -1,0 +1,18 @@
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'New competition', new_admin_competition_path %></p>
+    <h2>Competitions</h2>
+  </div>
+  <br />
+  <table>
+    <tr>
+      <th>Title</th>
+    </tr>
+    <% @competitions.each do |competition| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= link_to "#{competition.title}", admin_competition_path(competition) %></td>
+      </tr>
+    <% end -%>
+  </table>
+
+</div>

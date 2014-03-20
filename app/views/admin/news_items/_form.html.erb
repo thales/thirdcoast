@@ -1,0 +1,17 @@
+<%= form.error_messages %>
+
+  <p>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+  </p>
+  
+  <p>
+    <%= form.label :description %><br />
+    <%= form.text_area :description, :class => "ckeditor-panel" %>
+  </p>
+
+    <p>
+    <%= form.label :is_3rdcoastnews %>
+     <%= form.check_box :is_3rdcoastnews %>
+  </p>
+

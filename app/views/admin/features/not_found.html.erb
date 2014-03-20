@@ -1,0 +1,20 @@
+<%= render "list_sidebar" %>
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'New feature', new_admin_feature_path %></p>
+    <h2>features (<%= @features.total_entries %>)</h2>
+  </div>
+  <br />
+  <div id="features-alphabet">
+    <% ('A'..'Z').each do |char| %>
+      <%= link_to char, "?char=#{char}" %>
+    <% end %>
+
+  </div>
+  <table>
+    <tr>
+      <th>No features matching "<%=h params[:q] %>" found</th>
+    </tr>
+  </table>
+
+</div>

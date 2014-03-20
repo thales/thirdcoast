@@ -1,0 +1,39 @@
+ <div class="contentHeader">
+   <div>
+   <%= link_to '&larr Editions', admin_competition_path(params[:competition_id]), { :title => "Back to Competitions List", :class => 'buttonColor' } %></div>
+   
+    <div>
+          <h3>Edition Name: <%=h @edition.title %></h3>
+          <%= link_to 'Edit', edit_admin_competition_edition_path(params[:competition_id], @edition)%>
+        </div>
+  </div>
+
+  <div class="rightCol">
+    <table>
+      <tr>
+        <th>
+          Awards:
+          (<%= link_to 'Add new', new_admin_competition_edition_award_path(params[:competition_id], @edition) %>)
+          <div style="float:right">
+            <%= link_to 'Reorder', '#', :id => "competition_awards_reorder" %>
+            <%= link_to 'Cancel reordering', admin_competition_edition_path(params[:competition_id], @edition), :id => "competition_awards_reorder_cancel" %>
+          </div>
+        </th>
+      </tr>
+    </table>
+    <ul class="sortable double_row">
+      <% @edition.awards.each do |award| %>
+        <li class="<%= cycle("even", "odd") -%>" id="sortable_<%= award.id %>">
+          <b><%= award.title %></b>
+          <span class="edit_link">
+            (<%= link_to "edit", edit_admin_competition_edition_award_path(params[:competition_id], params[:id], award) %>)
+          </span>
+          <br>
+          <%= award.feature_name %>
+        </li>
+      <% end %>
+    </ul>
+    <br />
+    <input type="button" value="Save" id="reorder_awards_save">
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<ul class="producers-column">
+  <% collection.each do |producer| %>
+    <li>
+      <%= link_to producer.name, library_producer_path(producer) %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,39 @@
+<div class="rightCol">
+  <div>
+    <h2>Weekly spotlight</h2>
+  </div>
+  <br />
+  <table>
+    <tr>
+      <th>Current weekly spotlight (<%= link_to 'change', edit_admin_spotlights_path %>)</th>
+    </tr>
+  
+    <tr class="even">
+      <td>
+        <% if @spotlight.feature %>
+          <%= @spotlight.feature.title %>
+        <% else %>
+          <i>None</i>
+        <% end %>
+      </td>
+    </tr>
+      
+    <tr>
+      <th>
+        History (sort by <%= sort_link %>)
+      </th>
+    </tr>
+    
+    
+    <% @spotlight_dates.each do |spotlighted_date| %>
+      <tr class="<%= cycle("even", "odd") %>">
+        <td>
+          <%= spotlighted_date.feature.title %> @<%= spotlighted_date.date%>
+        </td>
+      </tr>
+    <% end %>
+    
+  </table>
+  <%= will_paginate(@spotlight_dates) %>
+
+</div>

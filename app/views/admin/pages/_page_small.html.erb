@@ -1,0 +1,5 @@
+<div class="<%= page.published? ? "" : "not_published" %>">
+    <div class="<%= cycle("even", "odd")%>" style="line-height: 130%;">
+    <%= link_to page.title, edit_admin_page_path(page) %> <%= page.short_description%>
+  </div> 
+</div>

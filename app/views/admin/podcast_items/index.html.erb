@@ -1,0 +1,19 @@
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'New pocast item', new_admin_podcast_item_path %></p>
+    <h2>Podcast</h2>
+  </div>
+  <br />
+  <table>
+    <tr>
+      <th>Podcast</th>
+    </tr>
+    <% @podcast_items.each do |item| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= "#{item.title}" %> @ <%= item.created_at %> (<%= link_to 'edit', edit_admin_podcast_item_path(item)%>)</td>
+      </tr>
+    <% end -%>
+  </table>
+  <%= will_paginate @podcast_items %>
+</div>
+

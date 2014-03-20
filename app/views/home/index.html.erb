@@ -1,0 +1,60 @@
+<div id="content-home">
+  <div id="homNavHeader">
+    <div id="main_menu_wrapper">
+      <%= render "shared/main_menu" %>
+      <%= image_tag "rightimage_#{@rightimage}.png", :class=> "home-right-image" %>
+    </div>
+
+    <ul id="sub-menu">
+      <li><%= link_to "<span>Support</span>Us", "/about-tciaf/supporters/help-us-soar" %></li>
+      <li><%= link_to "<span>Browse</span>Our Library", library_path %></li>
+      <li><%= link_to "<span>Join</span>Our Mailing List", "/about-tciaf/sign-ups" %></li>
+      <li><%= link_to "<span>Subscribe</span>to podcast", "/about-tciaf/sign-ups" %></li>
+      <li><%= link_to "<span>shop</span>our Shoppe", '/about-tciaf/shoppe' %></li>
+      <li><%= link_to "<span>Listen</span>to re:sound", '/library/collections/2-re-sound' %></li>
+    </ul>
+  </div>
+
+  <div id="home-content-container">
+    <p class="homePageIntroText">Celebrating the best audio stories produced worldwide for radio and the Internet.</p>
+
+    <%= render "shared/weekly_spotlight" %>
+    
+    <%= render("shared/resound", :feature => @re_sound) if @re_sound %>
+  </div>
+
+</div>
+
+<div id="narrow-middle-col">
+  <p class="mheader"><%= link_to "CALENDAR", "/calendar"%></p>
+  <% @events.each do |event| %>
+    <h4 class="body-content-header"><%= event.name %></h4>
+    <h5 class="body-content-sub-header"><%= event.formatted_date %></h5>
+    <%= event.short_description %>
+  <% end %>
+  <br/>
+  <p class="mheader">News</p>
+  <% @news_items.each do |news_item| %>
+    <h4 class="body-content-header"><%= news_item.title %> </h4>
+    <%= news_item.description %>
+  <% end %>
+  <br/>
+  <p class="mheader">staff picks</p>
+  <% @staff_picks.each do |staff_pick| %>
+    <h4 class="body-content-header"><%= staff_pick.name %> </h4>
+    <%= staff_pick.blip %>
+  <% end %>
+</div>
+
+<div id="right-col">
+
+  <%= render 'shared/thanks' %>
+  <%= link_to (image_tag "Tile_twitter_Horiz_1.jpg"), "http://twitter.com/ThirdCoastFest", :target => "_blank" %>
+  <%= link_to (image_tag "Tile_facebook_Horiz_1.jpg"), "http://www.facebook.com/pages/Third-Coast-International-Audio-Festival/51072992130?ref=ts", :target => "_blank"%>
+  <%= link_to (image_tag @side_bar_tile_a.file.url(:original,false)), @side_bar_tile_a.link %>
+  <%= link_to (image_tag @side_bar_tile_b.file.url(:original,false)), @side_bar_tile_b.link %>
+  <% if !@side_bar_tile_c.nil? %> <%= link_to (image_tag @side_bar_tile_c.file.url(:original,false)), @side_bar_tile_c.link %><% end %>
+  <% if !@side_bar_tile_d.nil? %> <%= link_to (image_tag @side_bar_tile_d.file.url(:original,false)), @side_bar_tile_d.link %><% end %>
+
+
+</div>

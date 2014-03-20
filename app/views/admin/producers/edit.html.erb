@@ -1,0 +1,29 @@
+<div class="rightCol">
+    <%= link_to '&larr Producers', admin_producers_path %><h1>Editing producer</h1>
+
+
+    <% form_for([:admin,@producer]) do |f| %>
+      <%= f.error_messages %>
+
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+
+      <div>
+        <%= f.label :bio, 'Bio' %>
+        <%= f.text_area :bio, :class => "ckeditor-panel" %>
+      </div>
+
+      <p>
+        <%= f.submit 'Update' %>
+        <%= link_to 'Cancel', admin_producer_path(@producer) %>
+      </p>
+    <% end %>
+    <br>
+    <% if @producer.deletable? %>
+      <%= link_to "Delete", admin_producer_path(@producer), :method => :delete, :confirm => "Are you sure to delete #{@producer.name}?"%>
+    <% else %>
+      This producer has features. It's not possible to delete producers that have features.
+    <% end %>
+</div>

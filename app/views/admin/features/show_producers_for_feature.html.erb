@@ -1,0 +1,31 @@
+<div class="rightCol">
+  <h1>All Producers for Feature <%= link_to "#{@feature.title}", admin_feature_path(@feature) %></h1>
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+    <% @feature.producers.each do |producer| %>
+      <tr>
+        <td><%= link_to "#{producer.name}", admin_producer_path(producer) %></td>
+        <td><%= link_to 'Remove', admin_feature_remove_producer_path(@feature, producer) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br />
+  Select existing producer by typing the name below:
+  <% form_for [:admin,@feature] do |f|%>
+    <%= f.error_messages %>
+    <%= hidden_field_tag(:feature_id, @feature.id) %>
+    <%= hidden_field_tag(:ref, "producers") %>
+    <%= hidden_field_tag "feature[producer_ids][]", "" %>
+    <p>
+      <%= label_tag "Producer Name" %><br />
+      <%= text_field_tag "producer[name]", "" %>
+    </p>
+    <p>
+      <%= f.submit 'Add This Producer' %>
+    </p>
+  <% end %>
+</div>
+
+

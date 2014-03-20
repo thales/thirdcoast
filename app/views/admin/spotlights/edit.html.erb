@@ -1,0 +1,20 @@
+<div class="rightCol">
+
+
+<h1>Edit spotlight</h1>
+
+<% form_for @spotlight, :url => admin_spotlights_path do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :feature_name %><br />
+    <%= f.text_field :feature_name %>
+  </p>
+  <p>
+    <%= f.submit 'Save changes' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_spotlights_path %> |
+<%= link_to 'Cancel', admin_spotlights_path %>
+</div>

@@ -1,0 +1,19 @@
+<div class="rightCol">
+  <h1>New Image</h1>
+
+  <% form_for([:admin, @file], :html => { :multipart => true} ) do |form| %>
+    <p>
+      <%= form.label :file %><br />
+      <%= form.file_field :file %>
+    </p>
+    <p>
+      <%= form.label :name %> (optional, will use file name if empty)<br />
+      <%= form.text_field :name %>
+    </p>
+    
+    <p><%= form.submit 'Create' %></p>
+  <% end %>
+
+  <p><%= link_to 'Back', admin_misc_images_path %></p>
+</div>
+

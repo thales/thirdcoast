@@ -1,0 +1,50 @@
+<div id="content" class="clearfix">
+  <%= render "shared/nav_header" %>
+  <div id="left-col">
+    <%= render "shared/page_menu" %>
+  </div>
+  <div id="templates-content-container" class="store_container">
+    <div class="store-header-wrapper">
+    <div class="left">
+      <h1 class="store-header">Shoppe</h1>
+      <p class="text">High fashion! Fine art! Third Coasters! Bring the TCF into your wardrobe and living room. Every order helps keep the stories coming, and helps US help YOU hear them! Thank you, thank you.
+      <p class="text">P.S. Already own a Third Coast shirt? Send us a photo of you wearing it, for our Third Coast T-Shirt Pals gallery. Or take a photo when your NEW shirt arrives, and send it along.</p>
+    </div>
+    <div class="right" style="margin-left:20px;">
+      <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="business" value="jshapiro@thirdcoastfestival.org">
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="display" value="1">
+        <input type="image" name="submit" border="0" src="http://s3.amazonaws.com/3rdcoast-miscellaneous-images/5/original/view_cart_.jpg" alt="PayPal - The safer, easier way to pay online">        
+      </form>
+    </div>
+    </div>
+
+    <% @store_items.each do |item| %>
+      <div class="store_item_container">
+        <div class="left">
+          <%= image_tag item.image.url %>
+        </div>
+        <div class="right">
+          <p class="sub-header"><%= item.title %></p>
+          <%= item.description %>
+
+          <div class="paypal-select"><%= item.paypal %></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+<% end %>
+  </div>
+</div>
+
+<div id="right-col">
+
+  <%= render 'shared/thanks' %> 
+  <%= link_to (image_tag "Tile_twitter_Horiz_1.jpg"), "http://twitter.com/ThirdCoastFest", :target => "_blank" %>
+  <%= link_to (image_tag "Tile_facebook_Horiz_1.jpg"), "http://www.facebook.com/pages/Third-Coast-International-Audio-Festival/51072992130?ref=ts", :target => "_blank"%>
+  <%= link_to (image_tag @side_bar_tile_a.file.url(:original,false)), @side_bar_tile_a.link %>
+  <%= link_to (image_tag @side_bar_tile_b.file.url(:original,false)), @side_bar_tile_b.link %>
+  <% if !@side_bar_tile_c.nil? %> <%= link_to (image_tag @side_bar_tile_c.file.url(:original,false)), @side_bar_tile_c.link %><% end %>
+  <% if !@side_bar_tile_d.nil? %> <%= link_to (image_tag @side_bar_tile_d.file.url(:original,false)), @side_bar_tile_d.link %><% end %>
+
+</div>

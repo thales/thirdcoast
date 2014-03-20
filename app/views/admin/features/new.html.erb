@@ -1,0 +1,50 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+<h1>New feature</h1> 
+<% form_for([:admin, @feature]) do |f| %>
+
+
+  <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :class => "ckeditor-panel" %>
+    </p>
+
+    <div>
+      <%= f.label :origin_country, "Country Of Origin" %>
+      <%= f.text_field :origin_country %>
+    </div>
+
+    <div>
+      <%= f.label :premir_location, "First Presented At" %>
+      <%= f.text_field :premier_locaction %>
+    </div>
+
+    <div>
+      <%= f.label :premier_date,  "First presented Date" %>
+      <%= f.text_field :premier_date  %>
+      <span>eg: 2003</span>
+    </div>
+
+      <div id="notice_container">
+        <%= f.check_box 'published', {:class => :checkbox}  %>
+        <span><label for="published" class="choice">Click the checkbox to  publish this feature</label></span>
+      </div>    
+
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+
+
+<% end %>
+
+<%= link_to 'Back', admin_features_path %>
+    </div>

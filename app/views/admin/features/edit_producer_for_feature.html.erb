@@ -1,0 +1,25 @@
+<div class="rightCol">
+<h1>Edit Producer For Feature <%= link_to "#{@feature.title}", admin_feature_path(@feature) %></h1>
+
+<% form_for :producer, :url => admin_update_producer_for_feature_path(@producer), :html => { :method => :put } do |f| %>
+  <%= f.error_messages %>
+    <%= hidden_field_tag(:feature_id, @feature.id) %>
+    <%= hidden_field_tag(:id, @producer.id) %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <div>
+    <%= f.label :bio, 'Bio' %>
+    <%= f.text_area :bio, :class => "ckeditor-panel" %>
+  </div>
+
+  <p>
+    <%= f.submit 'Update' %>
+    <%= link_to 'Cancel', admin_show_producers_for_feature_path(@feature) %>
+  </p>
+<% end %>
+</div>
+
+

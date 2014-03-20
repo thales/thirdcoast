@@ -1,0 +1,18 @@
+#footer{
+  display:none;
+}
+
+#right-col{
+  display:none;
+}
+
+#sub-menu{
+  display: none;
+}
+
+#print_logo{
+  bottom:20px;
+  left: 0;
+  position: absolute;
+  display: block !important;
+}

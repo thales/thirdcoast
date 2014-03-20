@@ -1,0 +1,25 @@
+<h1>Photo Files #new</h1>
+<% form_for([@feature, @feature_photo], :url => admin_feature_feature_photos_path, :html => { :multipart => true} ) do |f| %>
+  <%= f.error_messages %>
+  <ul>
+     <li>
+       <div>
+	 <%= f.label :feature, "Upload a Photo" %>
+         <%= f.file_field :photo %>
+       </div>
+     </li>
+     <li>
+       <div>
+	 <%= f.label :caption,"Caption", :class => "desc" %>
+	 <%= f.text_field :caption, :class => "text medium", :maxlength => 27 %>
+	 Characters left: <span id="caption_characters_left_count">27</span>
+       </div>
+     </li>
+       <div>
+	 <%= f.submit "Create", :class => "button" %>
+	 <%= link_to "Cancel", admin_feature_path(@feature) %>
+       </div>
+     </li>
+   </ul>
+<% end -%>
+

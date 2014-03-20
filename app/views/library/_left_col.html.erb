@@ -1,0 +1,23 @@
+<%= render "shared/nav_header" %>
+ 
+<div id="left-col" class="clearfix">
+  <% form_tag library_search_path, :class => "librarySearch",  :method=>:get do -%>
+      <%= text_field_tag :q, params[:q] %>
+  <% end -%>
+  
+  <div id="searchPlaceholderText" style="display:<%= params[:q].nil? || params[:q].blank? ? "block" : "none"  %>">
+    Search <span class="searchPlaceholderTextColored"><%= Feature.published.count %></span> radio stories
+  </div>
+  
+  <p class="library-intro">TCF Collections:</p>
+  <div id="filter_by_container">
+    <div id="filter_by_collections">
+      <% Collection.all.each do |collection| %>
+        <%= link_to "#{collection.name} (#{collection.features.count})", library_collection_url(collection), :class => (collection == @collection ? "selected_link" : nil) %>
+        <br />
+      <% end%>
+    </div>
+  </div> 
+
+   <%= link_to "Producer Index", library_producers_url, :class => (@producers_opened ? "producers-index-link_selected" : "producers-index-link") %>
+ </div>

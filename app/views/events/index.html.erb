@@ -1,0 +1,33 @@
+<div id="content">
+  <%= render "shared/nav_header" %>
+  <div id="left-col" class="clearfix">
+    <ul id="small_menu">
+     <%= render "sidebar" %>
+  </ul>
+    <ul id="address">
+      <li>Third Coast Festival</li>
+      <li>Navy Pier</li>
+      <li>848 East Grand</li>
+      <li>Chicago, Illinois</li>
+      <li>60611-3509</li>
+    </ul>
+    <ul id="sub_address">
+      <li>312-948-4682</li>
+      <li><%= mail_to 'info@thirdcoastfestival.org'%></li>
+    </ul>    
+  </div>
+  <div id="middle-col">
+    <div id="content-container" style="background:white;">
+        <div id="calendar_mainblock">
+        <%= render "main" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="right-col">
+  <%= render 'shared/thanks' %>
+  <%= link_to (image_tag "Tile_twitter_Horiz_1.jpg"), "http://twitter.com/ThirdCoastFest"%>
+  <%= link_to (image_tag "Tile_facebook_Horiz_1.jpg"), "http://www.facebook.com/pages/Third-Coast-International-Audio-Festival/51072992130?ref=ts"%>
+  <%= link_to (image_tag "Tile_donate.png"), "/about-tciaf/supporters/help-us-soar"%>
+</div>

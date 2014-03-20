@@ -1,0 +1,19 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+<p>
+  <b>Title:</b>
+  <%=h @page_template.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @page_template.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_page_template_path(@page_template) %> |
+<%= link_to 'Back', admin_page_templates_path %>
+</div>    

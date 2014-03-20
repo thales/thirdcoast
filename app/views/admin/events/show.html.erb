@@ -1,0 +1,56 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+<div class="contentHeaderEvent">
+  <div>
+    <%= link_to 'Events', admin_events_path, { :title => "Back to Events List", :class => 'buttonColor' } %>
+  </div>
+  <div>
+    <h3>Name: <%=h @event.name %></h3>
+    <%= link_to 'Edit', edit_admin_event_path(@event)%>
+  </div>
+</div>
+<div class="container">
+
+  <div class="block">
+    <b>Type:</b>
+    <%= h @event.flavor %>
+  </div>
+  
+  <div class="block">
+    <b>Short description:</b>
+    <%= h @event.short_description %>
+  </div>
+
+  <div class="block">
+    <b>Event Picture:</b>
+    <%= @event.photo.exists? ? image_tag(@event.photo.url(:small)) : "-" %>
+  </div>
+
+  <div class="block">
+    <b>Event Date:</b>
+    <%= h @event.formatted_date %>
+  </div>
+  
+  <% unless @event.deadline? %>
+  <div class="block">
+    <b>Event Location:</b>
+    <%= h @event.location %>
+  </div>
+  
+  <div class="block">
+    <b>Event Host:</b>
+    <%= h @event.host %>
+  </div>
+  <% end %>
+  
+  <div class="block">
+    <b>Is 3rdcoast Event?:</b>
+    <%= h @event.is_3rdcoastevent ? "Yes" : "No" %>
+  </div>
+  <p>
+    <%= link_to 'Edit', edit_admin_event_path(@event)%>
+    |
+    <%= link_to 'Back', admin_events_path %>
+  </p>
+</div>

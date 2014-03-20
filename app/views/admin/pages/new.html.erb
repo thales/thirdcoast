@@ -1,0 +1,48 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+
+
+<h1>New page</h1>
+
+<% form_for([:admin,@page]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :short_description %><br />
+    <%= f.text_field :short_description %>
+  </p>
+
+  <p>
+    <%= f.label :template_id %><br />
+    <%= f.select :template_id, options_from_collection_for_select(PageTemplate.all, 'id', 'title', @page.template_id), :include_blank => 'Select:' %>
+  </p>
+  
+  
+  <% f.fields_for :parts do |p| %>
+    <b><%= p.object.name %></b>
+    <br>
+    <%= p.label :content %>
+    <%= p.text_area :content %>
+  <% end %>
+  
+  <div id="notice_container">
+    <%= f.check_box 'published', {:class => :checkbox}  %>
+    <span><label for="published" class="choice">Click the checkbox to  publish this page</label></span>
+  </div>    
+  
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_pages_path %>
+</div>

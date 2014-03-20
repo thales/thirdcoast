@@ -1,0 +1,14 @@
+<div class="rightCol">
+  <h1>Producer for feature: <%= link_to "#{@feature.title}", admin_feature_path(@feature) %> </h1>
+  <%= link_to 'Edit', admin_edit_producer_for_feature_path(@feature, @producer) %>
+<p>
+  <b>Name:</b>
+  <%=h @producer.name %>
+</p>
+
+<div>
+  <p>Bio</p>
+  <%= @producer.bio %>
+</div>
+
+</div>    

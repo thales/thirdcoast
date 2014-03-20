@@ -1,0 +1,15 @@
+<% if current_spotlight %>
+  <div class="content-block-wrapper" id="spotlight_at_top">
+    <div class="home-text">
+      <%= link_to " Library Spotlight", "/library/collections/1-library-spotlight", :class => "header" %>
+      <p class="sub-header"><%= current_spotlight.title %></p>
+      <p class="subhead2">By <%= current_spotlight.producers.collect(&:name).to_sentence %></p>
+      <p class="body"><%= truncate_feature_description(current_spotlight) %></p>
+      <p class="clearfix"><%= link_to "", player_path(current_spotlight), :rel => 'playerPopup', :class => "listen_link" %></p>
+      
+    </div>
+   
+    <a href=<%= current_spotlight.primary_image(:maximum) %> rel="lightbox"><%= image_tag current_spotlight.primary_image %></a>
+    <!--  <%= image_tag current_spotlight.primary_image %>  -->
+  </div>
+<% end %>

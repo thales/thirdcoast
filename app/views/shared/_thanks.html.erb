@@ -1,0 +1,8 @@
+<p class="mheader"><%= link_to 'THANKS', "/about-tciaf/supporters"%></p>
+
+<div class="thanks">
+  <% Donor.on_main.each do |donor| %>
+    <p class="hangingIndent"><%= link_to donor.name, "/about-tciaf/supporters"  %></p>
+  <% end %>
+  <p style="padding-left:8px; text-indent: -8px; width: 145px;"><%= link_to "Individual Donors", "/about-tciaf/supporters" %></p>
+</div>

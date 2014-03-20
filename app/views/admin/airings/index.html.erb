@@ -1,0 +1,39 @@
+<div id="leftCol">
+  <% if Airing.count > 0%>
+    <%= select_tag :year, options_for_select((first_year..last_year).to_a.reverse.unshift(["Filter...",""]), params[:year].to_i), :id => "months_container_dropdown" %>
+    
+    <div class="months_container">
+      <a alt="1" href="#">January</a>
+      <a alt="2" href="#">February</a>
+      <a alt="3" href="#">March</a>
+      <a alt="4" href="#">April</a>
+      <a alt="5" href="#">May</a>
+      <a alt="6" href="#">June</a>
+      <a alt="7" href="#">July</a>
+      <a alt="8" href="#">August</a>
+      <a alt="9" href="#">September</a>
+      <a alt="10" href="#">October</a>
+      <a alt="11" href="#">November</a>
+      <a alt="12" href="#">December</a>
+    </div>
+  <% end %>
+</div>
+
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'New airing', new_admin_airing_path %></p>
+    <h2>Re:sound Airings</h2>
+  </div>
+  <br />
+  <table>
+    <tr>
+      <th>Re:sound Airings</th>
+    </tr>
+    <% @airings.each do |airing| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= "#{airing.feature.title}" %> @ <%= airing.date%> (<%= link_to 'edit', edit_admin_airing_path(airing)%>)</td>
+      </tr>
+    <% end -%>
+  </table>
+  <%= will_paginate @airings %>
+</div>

@@ -1,0 +1,24 @@
+<div class="rightCol">
+<h2>Audio Files for feature: <%= link_to "#{@feature.title}", admin_feature_path(@feature) %></h2>
+<div>
+  <% if @feature.audio_file.nil? %>
+    <%= link_to "Add an Audio File", new_admin_feature_audio_file_path(@feature) %>
+  <% else %>
+    <%= link_to "Replace an Audio file", new_admin_feature_audio_file_path(@feature) %>
+    <br>
+    <br>
+    <ul>
+      <li><%= link_to @feature.audio_file.mp3_file_name, @feature.audio_file.mp3.url, :rel => "mini_player", :pre_length => @feature.audio_file.duration %></li>
+      <li>
+        <br>
+        <% if @feature.audio_file.downloadable? %>
+            This file is downloadable. <%= link_to "Make not downloadable", set_downloadable_admin_feature_audio_file_path %>.
+        <% else %>
+            This file is not downloadable. <%= link_to "Make downloadable", set_downloadable_admin_feature_audio_file_path %>.
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
+</div>
+        
+</div>

@@ -1,0 +1,14 @@
+<%= form.label :login %><br />
+<%= form.text_field :login %><br />
+<%= form.label :email %><br />
+<%= form.text_field :email %><br />
+<%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+<%= form.password_field :password %><br />
+<%= form.label :password_confirmation %><br />
+<%= form.password_field :password_confirmation %><br />
+
+<%= form.check_box :notify_email %>
+<%= form.label :notify_email, "Send email notifications" %><br />
+
+<%= hidden_field_tag "user[role_id]", current_user.id == @user.id ? 1 : 2 %>
+

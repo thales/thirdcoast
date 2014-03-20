@@ -1,0 +1,11 @@
+<div id="comment_<%= comment.id %>" <% if comment.is_deleted %>class="comment_deleted"<% end %>>
+  <%= h comment.comment %><br>
+  Posted <%= comment.created_at.strftime("%I:%M%p on %m.%d.%y") %>
+  |
+  <% if comment.is_deleted %>
+    <%= link_to 'undelete', undelete_admin_feature_comment_url(:feature_id => @feature.id, :id => comment.id), :confirm => 'Are you sure to undelete this comment?' %>
+  <% else %>
+    <%= link_to 'delete', delete_admin_feature_comment_url(:feature_id => @feature.id, :id => comment.id), :confirm => 'Are you sure to delete this comment?' %>
+  <% end %>
+</div>
+<br>

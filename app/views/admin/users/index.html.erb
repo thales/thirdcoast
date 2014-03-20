@@ -1,0 +1,29 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class='container'>
+<h1>Admin Users</h1>
+
+<%= link_to 'New Admin', new_admin_user_path %>
+
+<table class="thleft">
+
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Notify</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+     <td><%= link_to "#{user.login}", admin_user_path(user) %></td>
+     <td><%= user.email %></td>
+     <td><%= user.role.name %></td>
+     <td><%= user.notify_email ? "Yes" : "No" %></td>
+     <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+  </tr>
+<% end %>
+</table>
+</div>

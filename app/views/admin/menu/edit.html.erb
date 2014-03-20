@@ -1,0 +1,25 @@
+<div class="rightCol">
+
+
+<h1>Edit menu item</h1>
+
+<% form_for @item, :url => admin_menu_path(@item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :parent_id %><br />
+    <%= f.select :parent_id, parent_menu_items(@item.parent), :include_blank => "Select parent:" %>
+  </p>
+
+  <p>
+    <%= f.label :page_static %><br />
+    <%= f.select :page_static, options_from_collection_for_select(Page.az, :id, :title_with_desc, @item.page_id), :include_blank => "Select page:" %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Save changes' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_menu_index_path %>
+</div>

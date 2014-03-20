@@ -1,0 +1,21 @@
+<div class="rightCol" style="width:800px">
+  <h1>Rebuild page</h1>
+  
+  Are you sure that you want to rebuild "<%= @page.title %>"?  
+  <br>
+  <br>
+  ****THIS WILL DESTROY CONTENT OF THIS PAGE********
+  <br>
+  <br>
+  <% form_for @page, :url => rebuild_do_admin_page_path(@page) do |f| %>
+    <p>
+      <%= f.label :template_id, "Select new template:" %><br />
+      <%= f.select :template_id, options_from_collection_for_select(PageTemplate.all, 'id', 'title', nil), :include_blank => 'Select:' %>
+    </p>
+    <br>
+    <p>
+      <%= f.submit "Proceed" %>
+    </p>
+    
+  <% end %>
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script> -->
+
+    <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+    <%= include_javascripts :workspace, :admin %>
+    
+    <%=  include_stylesheets :workspace, :admin %>
+    
+    <%= javascript_include_tag :ckeditor %>
+
+    <style type="text/css"><%= yield :stylesheets %></style>
+
+
+    <title><%= @page_title = "admin home" %></title>
+	<!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+	<![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div id="leftCol">
+        <%= render :partial => "shared/admin_feature_side_menu" if request.request_uri.match(/admins_panel\/features\/[\d]+/)%>
+      </div>
+
+      <div class="topNav">
+        <%= link_to "TCIAF", root_path %> --
+        <%= link_to_unless_current("Admin_Home", admin_url)  %> |
+        <% #= link_to_unless_current("Admin_Home", {:controller => "admin/admin", :action => "index"})  %> |
+        <% if !current_user %>
+          <%= link_to "Log In", new_admin_user_session_path %>
+        <% else %>
+          <%= link_to "Logout", admin_user_session_path, :method => :delete %>
+        <% end unless request.request_uri.match("/admins_panel/password")%>
+      </div>
+      <%= yield -%>
+    </div>
+  </body>
+</html>    

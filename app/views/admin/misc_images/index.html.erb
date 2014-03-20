@@ -1,0 +1,32 @@
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'Add Misc. Image', new_admin_misc_image_path %></p>
+    <h2>Misc Images</h2>
+  </div>
+  <table>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>URL</th>
+      <th></th>
+    </tr>
+    <% @files.each do |file| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= image_tag file.file.url(:thumb) %></td>
+        <td class="middle"><%= file.name %></td>
+        <td class="middle">
+            <input class="allselectable" value="<%= file.file.url(:original, false) %>" size="50">
+            <div class="clippy_container"><%= clippy file.file.url(:original, false) %></div>
+        </td>
+        <td class="middle">
+            <%= link_to "delete", admin_misc_image_path(file), :method => :delete, :confirm => "Are you sure to delete \"#{file.name}\"?" %>
+        </td>
+      </tr>
+    <% end -%>
+  </table>
+  <br />
+
+  <%= will_paginate(@files) %>
+
+</div>
+

@@ -1,0 +1,20 @@
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'New Staff Pick', new_admin_staff_pick_path %></p>
+    <h2>Staff Picks (<%= @staff_picks.size %>)</h2>
+  </div>
+  <table>
+    <tr>
+      <th>Title</th>
+    </tr>
+    <% @staff_picks.each do |staff_pick| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= link_to "#{staff_pick.name}", admin_staff_pick_path(staff_pick) %></td>
+      </tr>
+    <% end -%>
+  </table>
+  <br />
+
+  <%= will_paginate(@staff_picks) %>
+
+</div>

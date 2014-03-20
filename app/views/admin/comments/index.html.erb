@@ -1,0 +1,14 @@
+<div class="rightCol">
+<h2>Comments</h2>
+  <br>
+  <% if flash[:notice ]%>
+    <p style="color: green"><%= flash[:notice] %></p>
+    <br>
+  <% end %>
+  
+  <% @comments.each do |comment| %>
+    <%= render :partial => 'comment', :object => comment %>
+  <% end %>
+  
+  <%= will_paginate(@comments, :next_label => 'Older >>', :prev_label => '<< Newer')%>
+</div>

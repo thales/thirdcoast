@@ -1,0 +1,31 @@
+ 
+<div class="container">
+<% form_for current_user, :url => admin_password_path, :method => :put do |form| %>
+  <%= form.error_messages %>
+  <ul>
+      <li>
+          <div>
+              <label for="old_password" class="desc">Current Password</label>
+              <%= password_field_tag 'old_password', @old_password => "text medium" %>
+          </div>
+      </li>
+      <li>
+          <div>
+              <%= form.label :password, form.object.new_record? ? nil : "New Password", :class => "desc" %>
+              <%= form.password_field :password, :class => "text medium" %>
+          </div>
+      </li>
+      <li>
+          <div>
+              <%= form.label :password_confirmation, "Password Confirmation", :class => "desc" %>
+              <%= form.password_field :password_confirmation, :class => "text medium" %>
+          </div>
+      </li>
+      <li>
+        <div>
+            <%= form.submit "Update" %>
+        </div>
+      </li>
+  </ul>
+<% end %>
+</div>

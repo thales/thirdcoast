@@ -1,0 +1,45 @@
+ <div class="contentHeader">
+   <div>
+   <%= link_to '&larr Features', admin_features_path, { :title => "Back to Features List", :class => 'buttonColor' } %></div>
+   
+    <div>
+          <h3>Name: <%=h @feature.title %> <%= link_to "Player Preview", player_path(@feature), :rel => "playerPopup" %></h3>
+          <%= link_to 'Edit', edit_admin_feature_path(@feature)%>
+        </div>
+  </div>
+
+  <div class="rightCol">
+
+  <div class="block">
+    <p id="feature_story">      
+      <%= @feature.description %>
+    </p>
+  </div>
+
+   <div class="block">
+      <h3 id="feature_story">Country Of Origin</h3>
+     <p><%= @feature.origin_country %></p>
+    </div>
+
+   <div class="block">
+     <h3>First Presented</h3>
+     <%= @feature.premier_locaction %>
+   </div>
+
+   <div class="block">
+     <h3>First Presented Date</h3>
+     <%= @feature.premier_date %>
+   </div>
+
+  <div class="notice_container">
+    <% if @feature.published %>
+     <p>This Feature is Published</p>
+    <% else -%>
+       <p>This feature is not published</p>
+    <% end -%>
+
+  </div>
+</div>
+
+
+

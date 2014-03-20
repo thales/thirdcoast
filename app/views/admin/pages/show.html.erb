@@ -1,0 +1,39 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+<p>
+  <b>Title:</b>
+  <%=h @page.title %>
+</p>
+
+<p>
+  <b>Alternative Title:</b>
+  <%=h @page.alternative_title %>
+</p>
+
+<p>
+  <b>Template:</b>
+  <%=h(@page.template.title) if @page.template %>
+</p>
+
+<p>
+  <b>URL:</b>
+  http://<%= (request.env['HTTP_HOST'] || "thirdcoastfestival.org") +'/'+@page.path %>
+</p>
+
+<div class="notice_container">
+  <% if @page.published %>
+   <p>This page is Published</p>
+  <% else -%>
+     <p>This page is not published</p>
+  <% end -%>
+
+</div>
+
+
+
+<%= link_to 'Edit', edit_admin_page_path(@page) %> |
+<%= link_to 'Back', admin_pages_path %>
+</div>

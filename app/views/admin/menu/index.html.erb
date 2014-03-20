@@ -1,0 +1,20 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+<br>
+<div class="rightCol">
+  <p style="float: right;">
+    <%= link_to 'Reorder', '#', :id => "reorder_menu_items" %> |
+    <%= link_to 'Cancel reordering', admin_menu_index_url, :id => "reorder_menu_items_cancel" %> 
+    <%= link_to 'New menu item', new_admin_menu_path, :id => "new_menu_item_link" %>
+  </p>
+  
+  <div id="menu_items_table">
+    <% @items.each do |item| %>
+      <%= render "menu_item", :item => item %>
+    <% end %>
+    
+    <div style="clear:both"></div>
+  </div>
+  <input type="button" value="Save" id="reorder_menu_items_save">
+</div>
