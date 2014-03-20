@@ -1,0 +1,16 @@
+<div class="rightCol">
+<h1>Links Block</h1>
+
+<% form_for([@feture, @extra], :url => admin_extra_path(@extra)) do |f| %>
+  <%= f.error_messages %>
+
+      <div>
+        <%= f.label :links_block, "Links Block" %>
+        <%= f.text_area :links_block, :class => "ckeditor-panel" %>
+      </div>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+</div>

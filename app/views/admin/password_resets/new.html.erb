@@ -1,0 +1,18 @@
+<h1>Forgot Password</h1>
+
+<div class="container">
+  <% if flash[:notice ]%>
+    <p style="color: green"><%= flash[:notice] %></p>
+    <br>
+  <% end %>
+
+Fill out the form below and instructions to reset your password will be emailed to you:<br />
+<br />
+
+<% form_tag admin_password_resets_path do %>
+  <label>Email:</label><br />
+  <%= text_field_tag "email", nil, :class => "medium" %><br />
+  <br />
+  <%= submit_tag "Reset my password" %>
+<% end %>
+</div>

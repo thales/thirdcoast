@@ -1,0 +1,35 @@
+<div class="rightCol">
+  <h2>Photos</h2>
+  <div id="flash" class="flash_html">
+    <% unless flash[:notice].blank? %>
+      <%= flash[:notice]%>
+    <% end %>
+    <% unless flash[:error].blank? %>
+      <%= flash[:error]%>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "Add a Picture for", new_admin_feature_feature_photo_path(@feature) %>
+  </div>
+  <div>
+    <% if !@feature.feature_photos.nil? -%>
+
+      <table>
+        <% for feature_photo in @feature.feature_photos %>
+
+          <% if feature_photo.photo.file? %>
+            <tr><td><%= radio_button_tag 'primary', feature_photo.id, feature_photo.primary, :class => "primary" %></td>
+              <td><h2><%= feature_photo.caption.blank? ? "<i>no caption</i>" : feature_photo.caption %></h2>
+              <%= link_to "delete", admin_feature_feature_photo_path(@feature, feature_photo), :confirm => "Are you sure?", :method => "delete" %>
+              <br>
+                <%= image_tag feature_photo.photo.url(:small) %></td>
+            </tr>
+          <% end -%>
+        <% end -%>
+      </table>
+
+    <% end -%>
+  </div>
+</div>
+
+

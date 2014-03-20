@@ -1,0 +1,25 @@
+<div class="rightCol">
+  <table>
+    <tr>
+      <th>
+        Store Items: (<%= link_to 'Add new', new_admin_store_item_path %>)
+        <div style="float:right">
+          <%= link_to 'Reorder', '#', :id => "reorder_store_items" %>
+          <%= link_to 'Cancel reordering', admin_store_items_url, :id => "reorder_store_items_cancel", :class=>"hidden_save_button" %>
+        </div>
+      </th>
+    </tr>
+  </table>
+
+  <ul class="sortable">
+    <% @store_items.each do |item| %>
+      <li class="<%= cycle("even", "odd") -%>" id="sortable_<%= item.id %>">
+        <b><%= link_to item.title, edit_admin_store_item_path(item) %></b>
+      </li>
+    <% end %>
+  </ul>
+  <br />
+
+  <input type="button" value="Save" id="reorder_store_items_save" class="hidden_save_button">
+</div>
+

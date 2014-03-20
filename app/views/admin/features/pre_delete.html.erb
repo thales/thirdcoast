@@ -1,0 +1,14 @@
+<h1>Delete a feature</h1>
+<div class="rightCol">
+Are you sure you want to delete "<%= @feature.title %>"?
+<br>
+<br>
+***Related audio files, pictures and Extras will be also be deleted as well, ***
+<br>
+<br>
+***<b>This action is irreversible!***</b>
+<br>
+<br>
+
+<%= button_to 'Delete this feature', admin_feature_url, :method => "delete" %>
+</div>

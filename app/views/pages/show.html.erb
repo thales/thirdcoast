@@ -1,0 +1,20 @@
+<div id="content" class="clearfix">
+  <%= render "shared/nav_header" %>
+  <div id="left-col">
+    <%= render "shared/page_menu" %>
+  </div>
+<div id="templates-content-container">
+   <%= eval_erb(@body || @page.body) %>
+</div>
+</div>
+
+<div id="right-col">
+  <%= render 'shared/thanks' %>
+  <%= link_to (image_tag "Tile_twitter_Horiz_1.jpg"), "http://twitter.com/ThirdCoastFest", :target => "_blank" %>
+  <%= link_to (image_tag "Tile_facebook_Horiz_1.jpg"), "http://www.facebook.com/pages/Third-Coast-International-Audio-Festival/51072992130?ref=ts", :target => "_blank"%>
+  <%= link_to (image_tag @side_bar_tile_a.file.url(:original,false)), @side_bar_tile_a.link %>
+  <%= link_to (image_tag @side_bar_tile_b.file.url(:original,false)), @side_bar_tile_b.link %>
+  <% if !@side_bar_tile_c.nil? %> <%= link_to (image_tag @side_bar_tile_c.file.url(:original,false)), @side_bar_tile_c.link %><% end %>
+  <% if !@side_bar_tile_d.nil? %> <%= link_to (image_tag @side_bar_tile_d.file.url(:original,false)), @side_bar_tile_d.link %><% end %>
+
+</div>

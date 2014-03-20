@@ -1,0 +1,30 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+<div class="contentHeaderEvent">
+  <div>
+    <%= link_to 'News Items', admin_news_items_path, { :title => "Back to News Items List", :class => 'buttonColor' } %>
+  </div>
+  <div>
+    <h3>Title: <%=h @news_item.title %></h3>
+    <%= link_to 'Edit', edit_admin_news_item_path(@news_item)%>
+  </div>
+</div>
+<div class="container">
+
+  <div class="block">
+    <b>Description:</b>
+    <%= @news_item.description %>
+  </div>
+
+  <div class="block">
+    <b>Is 3rdcoast News:</b>
+    <%= @news_item.is_3rdcoastnews %>
+  </div>
+
+  <p>
+    <%= link_to 'Edit', edit_admin_news_item_path(@news_item)%>
+    |
+    <%= link_to 'Back', admin_news_items_path %>
+  </p>
+</div>

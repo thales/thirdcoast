@@ -1,0 +1,38 @@
+<div class="rightCol">
+
+
+<h1>Edit store item</h1>
+
+<% form_for [:admin, @store_item], :html => { :multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :class => "ckeditor-panel" %>
+  </p>
+
+  <p>
+    <%= f.label :paypal %><br />
+    <%= f.text_area :paypal %>
+  </p>
+
+  <p>
+    <%= f.label :image %><br />
+    <%= image_tag f.object.image.url(:small, false) %><br>
+    <%= f.file_field :image %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_store_items_path %> | <%= link_to 'Delete', admin_store_item_path(@store_item), :method => :delete, :confirm => "Are you sure you?" %>
+</div>
+
+

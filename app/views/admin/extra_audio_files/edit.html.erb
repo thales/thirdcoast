@@ -1,0 +1,33 @@
+<div class="rightCol">
+
+<h2>Update Extra Audio file for feature <%= @feature.title %></h2>
+<% form_for([@extra, @extra_audio_file], :url => admin_extra_audio_file_path(@extra_audio_file), :html => { :multipart => true} ) do |f| %>
+  <%= f.error_messages %>
+  <ul>
+     <li>
+       <div>
+	 <%= f.label :audio, "Upload an audio file" %>
+         <%= f.file_field :mp3 %>
+       </div>
+     </li>
+     <li>
+       <%= f.label :name %>
+       <%= f.text_field :name %>
+     </li>
+     <li>
+       <div>
+	 <%= f.label :description,"Note", :class => "desc" %>
+	 <%= f.text_area :description, :class => "text medium ckeditor-panel" %>
+       </div>
+     </li>
+     <li>
+       <%= f.label :length, "Duration - eg: HH:MM:SS", :class => "desc" %>
+       <%= f.text_field :hours, "size" => 2 %> <%= f.text_field :minutes, "size" => 2 %> <%= f.text_field :seconds, "size" => 2 %>
+     </li>
+   </ul> <br/><br/>
+    <div>
+    <%= f.submit "Update", :class => "button" %>
+    <%= link_to "Cancel", admin_feature_extra_url(@feature) %>
+      </div>
+<% end -%>
+</div>

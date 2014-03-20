@@ -1,0 +1,24 @@
+<div class="rightCol">
+
+
+<h1>New award</h1>
+
+<% form_for @award, :url =>admin_competition_edition_awards_path(params[:competition_id], params[:edition_id]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+    <%= f.label :feature_name %><br />
+    <%= f.text_field :feature_name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_competitions_path %>
+</div>

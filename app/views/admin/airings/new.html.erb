@@ -1,0 +1,25 @@
+<div class="rightCol">
+
+
+<h1>New airing</h1>
+
+<% form_for @airing, :url => admin_airings_path do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </p>
+  
+  <p>
+    <%= f.label :feature_name %><br />
+    <%= f.text_field :feature_name %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_airings_path %>
+</div>

@@ -1,0 +1,15 @@
+<div class="rightCol">
+<h1>Editing extra</h1>
+<% form_for([@feture, @extra], :url => admin_extra_path(@extra)) do |f| %>
+  <%= f.error_messages %>
+
+      <div>
+        <%= f.label :behind_the_scene_text, "Behind The Scene" %>
+        <%= f.text_area :behind_the_scene_text, :class => "ckeditor-panel" %>
+      </div>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+</div>

@@ -1,0 +1,26 @@
+<div class="rightCol">
+
+<h1>New producer</h1>
+<p>Adding a producer to feature: <%= link_to "#{@feature.title}", admin_feature_path(@feature)%> </p>
+<p style="font-size: 12px; font-weight:bold; color: red;">PLEASE ADD ONLY ONE PRODUCER PER FORM.</p>  
+
+<% form_for @producer, :url => admin_create_producer_for_feature_url do |f| %>
+  <%= f.error_messages %>
+  <%= hidden_field_tag(:feature_id, @feature.id) %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :autocomplete =>"off" %>
+  </p>
+  <br/>
+  <div>
+    <p><%= f.label :bio, 'Bio' %></P>
+    <%= f.text_area :bio, :class => "ckeditor-panel" %>
+  </div>
+
+  <p>
+    <%= f.submit 'Create' %>
+    <%= link_to 'Cancel', admin_feature_path(@feature) %>
+  </p>
+
+<% end %>
+</div>

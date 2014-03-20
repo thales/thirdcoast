@@ -1,0 +1,19 @@
+<div class="rightCol">
+<h1>Listing Categories for <%= link_to "#{@feature.title}", admin_feature_path(@feature) %> </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @feature.categories.each do |category| %>
+  <tr>
+    <td><%=h category.name %></td>
+      </tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_admin_feature_path(@feature,:ref => "categories") %>
+</div>
+
+

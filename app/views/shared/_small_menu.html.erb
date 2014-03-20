@@ -1,0 +1,5 @@
+<ul id="small_menu">
+  <% small_menu().each do |page| %>
+    <%= small_menu_item(page, "/#{@top_page.slug}") %>
+  <% end %>
+</ul>

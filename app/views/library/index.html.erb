@@ -1,0 +1,110 @@
+<div id="content">
+  <%= render "library/left_col"%> 
+
+<div id="middle-col">
+
+  <div id="content-container">
+    
+    <div class="content-block-wrapper">
+      <% if @tags.any? %>
+        <div class="tag_cloud clearfix">
+          <%= display_tags_cloud(@tags) %>
+        </div>
+        <a href="#" id="tags_expand_collapse" class="tagsExpander">(more tags)</a>
+      <% else %>
+        <div class="tag_cloud_placeholder">
+          No results! Go figure.      
+        </div>
+      <% end %>
+    </div>
+    
+    <% if @producer %>
+      <div class="content-block-wrapper ">
+        <div class="header"><%= @producer.name %></div>
+        <div class="producerBioText">
+          <%= @producer.bio %></div>
+      </div>
+    <% end %>
+
+    <% if @features.any? && @producer.nil? %>
+      <div class="content-block-wrapper-invisible"> 
+        <div id="library_filters_order_by_container">
+          <%= select_tag :order_by, options_for_select(library_sort_options, library_selected_sort_option), :id => 'library_filters_order_by' %>
+        </div>
+      
+        <% if params[:order_by] == "az" %>
+          <div id="library-alphabet">
+            <%= link_to "#", library_order_url_base+"az/-", :class => (params[:begins_with] == "-"  ? 'selected_link' : nil  ) %>
+            <% ('A'..'Z').each do |char| %>
+              <%= link_to char, library_order_url_base+"az/"+char.downcase, :class => (params[:begins_with] == char.downcase  ? 'selected_link' : nil  ) %>
+            <% end %>
+          </div>
+        <% end %>
+      
+        <% if params[:order_by] == "duration" %>
+          <div id="library-alphabet">
+            <%= link_to "<10", library_order_url_base+"duration/10", :class => (params[:begins_with] == "10"  ? 'selected_link' : nil  ) %>
+            <%= link_to "10-30", library_order_url_base+"duration/10-30", :class => (params[:begins_with] == "10-30"  ? 'selected_link' : nil  ) %>
+            <%= link_to "30+", library_order_url_base+"duration/30", :class => (params[:begins_with] == "30"  ? 'selected_link' : nil  ) %>
+          </div>
+        <% end %>
+        
+        <% if library_selected_sort_option == "rand" %>
+          <div id="library-alphabet">
+            <%= link_to "Shuffle" %>
+          </div>
+        <% end %>
+      
+        <% if !is_winners? && library_selected_sort_option == 'premier' %>
+          <div id="library-competition-editions">
+            <% if @years_produced_pre %>
+              <%= link_to "< 00", library_order_url_base(true)+"/year/pre", :class=> (params[:year].to_s == "pre" ?  "selected_link":nil ) %>
+            <% end %>
+          
+            <% @years_produced.each do |year| %>
+              <%= link_to year[-2,2], library_order_url_base(true)+"/year/#{year}", :class=> (params[:year].to_s == year ? "selected_link":nil ) %>
+            <% end %>
+          </div>
+        <% end %>
+      
+        <% if is_winners? && library_selected_sort_option == "premier" %>
+          <div id="library-competition-editions">
+            <% Competition.first.editions.each do |edition| %>
+              <%= link_to edition.title[-2,2], library_collection_year_url(@collection, edition.title), :class=> (params[:year].to_s == edition.title ? "selected_link":nil ) %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    
+    
+    
+    <div id="library-items">
+      <% unless @features.any? %>
+        <div class="no_features_found">
+            Sorry - your search hasn't turned up any audio.<br>
+            Please try again - adjust your search text, or sort by collection or tag. Happy hunting!
+        </div>
+      <% end %>
+
+      <% @features.each do |feature| %>
+        <%= render "feature", :feature => feature %>
+      <% end %>
+
+      <% unless @random %>
+        <%= will_paginate(@features) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+<div id="right-col" class="">
+  <%= render :partial => "shared/thanks" %>
+
+  <%= render "library/playlist" %>
+
+</div>
+
+<script type="text/javascript">
+  var library_order_url_base = '<%= library_order_url_base %>';
+</script>

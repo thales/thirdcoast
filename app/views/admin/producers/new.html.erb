@@ -1,0 +1,28 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+<h1>New producer</h1>
+
+
+<% form_for([:admin,@producer]) do |f| %>
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <br/>
+  <div>
+    <p><%= f.label :bio, 'Bio' %></P>
+    <%= f.text_area :bio, :class => "ckeditor-panel" %>
+  </div>
+
+  <p>
+    <%= f.submit 'Create' %>
+    <%= link_to 'Cancel', admin_producers_path %>
+  </p>
+  
+<% end %>
+</div>

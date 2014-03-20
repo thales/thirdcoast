@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  store_item_attribute_id: 
+  attribute_value: MyText
+
+two:
+  store_item_attribute_id: 
+  attribute_value: MyText

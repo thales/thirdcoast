@@ -1,0 +1,14 @@
+<%- if @feature && @feature.id %>
+	<ul>
+	  <li><%= link_to 'Story', admin_feature_path(@feature) %></li>
+	  <li><%= link_to 'Producers', admin_feature_path(@feature, :ref => "producers") %></li>
+	  <li><%= link_to 'Extras', admin_feature_extra_path(@feature) %></li>
+	  <li><%= link_to 'Collections', admin_feature_path(@feature, :ref => "collections") %></li>
+	  <li><%= link_to "Categories", admin_feature_path(@feature, :ref => "categories") %></li>
+	  <li><%= link_to 'Tags', admin_feature_path(@feature, :ref => "tags") %></li>
+	  <li><%= link_to 'Audio File', admin_feature_audio_file_path(@feature) %></li>
+    <li><%= link_to 'Images', admin_feature_feature_photos_path(@feature) %></li>
+    <li><%= link_to 'Comments', admin_feature_comments_path(@feature) %></li>
+    <li><%= link_to 'Delete', pre_delete_admin_feature_path(@feature)  %></li>
+	</ul>
+<%- end %>

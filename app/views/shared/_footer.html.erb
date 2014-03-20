@@ -1,0 +1,12 @@
+<div id="footer">
+	<div class="search">
+	<% form_tag '/search', :method => "get" do -%>
+		<%= text_field_tag :q, (current_page?(library_search_path) ? "" :  params[:q]), :placeholder => "Search the site", :class=>'searchbox' %>
+		<%= submit_tag "", :style=>"width:30px;display:none;", :name => nil %>
+	<% end -%>
+	</div>
+	<p class="pigeons" id="release_pigeons"><a href="#">Release the pigeons</a></p>
+	<p class="contactus"><%= link_to 'Contact Us', "/contactus" %></p>  
+	<p class="terms"><%= link_to 'Terms & Conditions', "/terms" %></p>
+	<p class="rights">&copy Third Coast International Audio Festival. All rights reserved. <%= link_to 'Site Credits', "#", :id =>"credits_footer_link" %>.</p>
+</div>

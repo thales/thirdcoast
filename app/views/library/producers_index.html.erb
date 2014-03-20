@@ -1,0 +1,42 @@
+<div id="content">
+  <%= render "library/left_col"%>
+
+<div id="middle-col">
+
+  <div id="content-container">
+    
+    <div class="content-block-wrapper-invisible">
+      <div id="library-alphabet" class="producers-index-alphabet">
+        <%= link_to "#", '#' %>
+        <% ('A'..'Z').each do |char| %>
+          <%= link_to char, '#' %>
+        <% end %>
+      </div>
+    </div>
+    
+    <div id="library-items" class="producers-index">
+      <% if @producers.any? %>
+        <div class="content-block-wrapper">
+            <%= render "producers_column", :collection => @part1 %>
+            <%= render "producers_column", :collection => @part2 %>
+            <%= render "producers_column", :collection => @part3 %>
+        </div>
+      <% else %>
+        <div class="no_features_found">
+          No producers matched your criterias
+        </div>
+      <% end %>
+    </div>
+    
+    <script type="text/javascript">
+      var producers = <%= @producers.map{|p| [p.id, p.name, p.to_param] }.to_json %>
+    </script>
+  </div>
+</div>
+</div>
+<div id="right-col" class="">
+  <%= render :partial => "shared/thanks" %>
+
+  <%= render "library/playlist" %>
+
+</div>

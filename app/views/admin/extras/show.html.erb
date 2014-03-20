@@ -1,0 +1,45 @@
+<div class="contentHeader">
+  <h2>Behind The Scene and Extra links for Feautre: <%= link_to "#{@feature.title}", admin_feature_path(@feature) %></h2>
+</div>
+
+<div class="rightCol">
+
+  <div id="links">
+    <h2>Links</h2>
+    <%= link_to "Edit Links Block", edit_admin_feature_extra_path(@feature, :ref => "extra_links") %> <br/>
+    <% unless @extra.links_block.nil? %>
+      <%= @extra.links_block %>
+    <% end unless @extra.nil?%>
+
+  </div>
+
+  <div id="links">
+    <h2>Extra Audio Files</h2>
+    <%= link_to "Add an Audio file", new_admin_extra_extra_audio_file_path(@extra) %> <br/>
+
+    <% unless @extra.extra_audio_files.empty? %>
+      <table>
+        <% @extra.extra_audio_files.each do |file| %>
+          <tr>
+            <td>
+              <%= link_to file.name, file.mp3.url, :rel => "mini_player", :pre_length => file.length %>
+              <br>
+              <%= file.description %>
+            </td>
+            <td><%= seconds_to_time(file.length) %></td>
+            <td><%= link_to "edit", edit_admin_extra_audio_file_path(file) %></td>
+            <td><%= link_to "delete", admin_extra_audio_file_path(file), :method => "delete", :confirm => "Are you sure?" %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end unless @extra.nil? %>
+  </div>
+
+  <% unless @extra.behind_the_scene_text.nil? %>
+    <b>Behind the scene text:</b> <%= link_to "Edit", edit_admin_feature_extra_path(@feature) %>
+    <%= @extra.behind_the_scene_text %>
+  <% else %>
+    <%= link_to "Add Behind the Scene text", edit_admin_feature_extra_path(@feature) %>
+  <% end %>
+
+</div>

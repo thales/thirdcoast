@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>ThirdCoast podcast</title>
+    <language>en-us</language>
+    <copyright>Third Coast</copyright>
+    <description>Our official podcast</description>
+    <link>http://thirdcoastfestival.org/</link>
+    <itunes:image href="http://thirdcoastfestival.org/images/pigeonplaceholder.jpg"/>
+    <itunes:category text="Music"/>
+    <itunes:author>Third Coast Festival</itunes:author>
+    <itunes:subtitle>Our ofificial podcast subtitle</itunes:subtitle>
+    <itunes:owner>
+      <itunes:name>Third Coast</itunes:name>
+      <itunes:email>third@coast</itunes:email>
+    </itunes:owner>
+    <item>
+      <title>Re:sound (A few of our favorite things)</title>
+      <description>Chocolate, television and horses. </description>
+      <pubDate>Thu, 29 Sep 2011 21:49:48 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/74/pod178resound_special_funder_edition_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/74/pod178resound_special_funder_edition_.mp3</guid>
+      <itunes:duration>0:38:17</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="36754393" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/74/pod178resound_special_funder_edition_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #149 The Piano Show</title>
+      <description>This hour: the piano. But not just as a musical instrument. The piano as a spiritual healer, as a symptom in a grand delusion, as a man&#8217;s obsession, and as a beloved friend, put out to pasture.</description>
+      <pubDate>Fri, 23 Sep 2011 21:57:11 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/73/pod177resound149_pianos_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/73/pod177resound149_pianos_.mp3</guid>
+      <itunes:duration>1:60:0-3546</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116952819" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/73/pod177resound149_pianos_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #108 The Here and There Show (originally aired in 2009)</title>
+      <description>Stories of people living between here and there. </description>
+      <pubDate>Fri, 16 Sep 2011 15:17:49 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/72/pod176resound108_here_and_there_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/72/pod176resound108_here_and_there_.mp3</guid>
+      <itunes:duration>1:60:0-3545</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116966194" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/72/pod176resound108_here_and_there_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #128 The Willie McGee Show (orginally aired in 2010)</title>
+      <description>This hour: the story (and the story behind the story) of Willie McGee.</description>
+      <pubDate>Thu, 08 Sep 2011 19:53:34 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/71/pod175resound128_WillieMcgee_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/71/pod175resound128_WillieMcgee_.mp3</guid>
+      <itunes:duration>0:59:53</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="115000114" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/71/pod175resound128_WillieMcgee_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #134 The Consequences Show (originally aired in 2010)</title>
+      <description>This hour: We explore consequences, both macro and micro.  </description>
+      <pubDate>Fri, 02 Sep 2011 18:05:08 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/70/pod174resound134_consequences_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/70/pod174resound134_consequences_.mp3</guid>
+      <itunes:duration>1:60:0-3563</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116396097" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/70/pod174resound134_consequences_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #148 The Buying and Selling Show</title>
+      <description>A school for auctioneers and other stories of selling, swapping, buying and trading. </description>
+      <pubDate>Wed, 24 Aug 2011 17:00:02 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/69/pod173resound148_buyingandselling_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/69/pod173resound148_buyingandselling_.mp3</guid>
+      <itunes:duration>0:59:14</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="113729518" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/69/pod173resound148_buyingandselling_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #86 The Death Show (orginally aired in 2008)</title>
+      <description>A visit to a pauper's graveyard, three very short (but very big) questions, and more..</description>
+      <pubDate>Fri, 19 Aug 2011 20:23:42 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/68/pod172resound86_death_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/68/pod172resound86_death_.mp3</guid>
+      <itunes:duration>0:59:07</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="113521374" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/68/pod172resound86_death_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #84 The Boys vs. Girls Show (originally aired in 2008)</title>
+      <description>This hour: girls, boys, and sleepover reconnaissance.</description>
+      <pubDate>Fri, 12 Aug 2011 15:33:08 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/67/pod171resound84_boysvgirls_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/67/pod171resound84_boysvgirls_.mp3</guid>
+      <itunes:duration>1:60:0-3562</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116427026" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/67/pod171resound84_boysvgirls_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #147 The Sense of Duty Show</title>
+      <description>This hour: A secret that threatens to tear apart a family. </description>
+      <pubDate>Fri, 05 Aug 2011 22:04:14 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/66/pod170resound147_senseofduty_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/66/pod170resound147_senseofduty_.mp3</guid>
+      <itunes:duration>0:59:54</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="115041074" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/66/pod170resound147_senseofduty_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #133 The Food Show </title>
+      <description>This hour: Food. It's delicious. It's complicated. </description>
+      <pubDate>Thu, 28 Jul 2011 19:47:35 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/65/Pod169Resound133_food_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/65/Pod169Resound133_food_.mp3</guid>
+      <itunes:duration>0:59:09</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="113597443" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/65/Pod169Resound133_food_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #132 The Lost Show (orginally aired in 2010)</title>
+      <description>This hour: looking for the intangible. What's lost and what might be found.</description>
+      <pubDate>Thu, 21 Jul 2011 20:56:43 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/64/pod168resound132_Lost_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/64/pod168resound132_Lost_.mp3</guid>
+      <itunes:duration>0:59:51</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="114923209" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/64/pod168resound132_Lost_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #146 The Nomads Show</title>
+      <description>This hour: nomadic cultures, peoples and spirits.</description>
+      <pubDate>Fri, 15 Jul 2011 22:00:30 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/63/pod167resound146_nomads_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/63/pod167resound146_nomads_.mp3</guid>
+      <itunes:duration>0:59:50</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="114897296" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/63/pod167resound146_nomads_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #131 The Space Show (orginally aired in 2010)</title>
+      <description>A one way mission to Mars, a Russian cosmonaut's favorite music, the Voyager golden record, the sound of the northern lights, and more.</description>
+      <pubDate>Thu, 07 Jul 2011 22:28:41 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/62/pod1166resound131_space_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/62/pod1166resound131_space_.mp3</guid>
+      <itunes:duration>1:60:0-3544</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="117007990" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/62/pod1166resound131_space_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #130 The Chicago Show (originally aired in 2010)</title>
+      <description>This hour: Chicago. Hogbutcher to the world, jewel of the Midwest, and everything in between.</description>
+      <pubDate>Thu, 30 Jun 2011 22:31:09 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/61/pod165resound130_chicago_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/61/pod165resound130_chicago_.mp3</guid>
+      <itunes:duration>0:59:53</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="115000114" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/61/pod165resound130_chicago_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound#118 The Shock Machine Show (originally aired in 2009)</title>
+      <description>The untold story behind one of the most famous and disturbing experiments in the history of psychological research.</description>
+      <pubDate>Thu, 23 Jun 2011 23:13:15 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/60/pod164resound118_shock_machine_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/60/pod164resound118_shock_machine_.mp3</guid>
+      <itunes:duration>1:60:0-3584</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="115717332" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/60/pod164resound118_shock_machine_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #145 The Fathers Show</title>
+      <description>This hour: Dads, in all their glory. 
+*Not all pieces in the original broadcast are included in the podcast due to rights issues.</description>
+      <pubDate>Thu, 16 Jun 2011 21:33:03 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/59/pod163resound145_fathers_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/59/pod163resound145_fathers_.mp3</guid>
+      <itunes:duration>0:35:49</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="68793890" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/59/pod163resound145_fathers_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #121 The Death Comes Home Show (originally aired in 2010)</title>
+      <description>This hour: the home funeral movement. Three families who've forgone traditional death rites in favor of a more DIY approach.</description>
+      <pubDate>Fri, 10 Jun 2011 14:45:54 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/58/pod162resound121_death_comes_home_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/58/pod162resound121_death_comes_home_.mp3</guid>
+      <itunes:duration>0:58:48</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="112919513" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/58/pod162resound121_death_comes_home_.mp3"/>
+    </item>
+    <item>
+      <title>Spotlight # 65 99% Invisible</title>
+      <description>An amazing new show about design from Roman Mars.</description>
+      <pubDate>Thu, 02 Jun 2011 19:55:22 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/57/pod161spotlight63.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/57/pod161spotlight63.mp3</guid>
+      <itunes:duration>0:15:12</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="29194765" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/57/pod161spotlight63.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #144 The Letters Show</title>
+      <description>This hour: letters. To yourself, to your city, lost letters, found letters... and a love letter to letters.</description>
+      <pubDate>Fri, 27 May 2011 19:47:49 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/56/pod160resound144_letters_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/56/pod160resound144_letters_.mp3</guid>
+      <itunes:duration>1:60:0-3573</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116091823" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/56/pod160resound144_letters_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 98 The Disappearing Show (originally aired in 2008)</title>
+      <description>One boy leaves home and never returns, another leaves and returns forever changed.</description>
+      <pubDate>Thu, 19 May 2011 22:02:30 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/55/Pod159Resound98_Disappearance_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/55/Pod159Resound98_Disappearance_.mp3</guid>
+      <itunes:duration>1:60:0-3575</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116021606" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/55/Pod159Resound98_Disappearance_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #125 The Justice Show (originally aired in 2010)</title>
+      <description>Justice and injustice, punishment, and redemption.</description>
+      <pubDate>Fri, 13 May 2011 20:29:56 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/54/Pod158resound125_justice_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/54/Pod158resound125_justice_.mp3</guid>
+      <itunes:duration>0:59:00</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="113288989" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/54/Pod158resound125_justice_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 143 The Centenarians Show</title>
+      <description>Stories about people who lived to be 100, and reflections from producer Neenah Ellis, on what she learned from these remarkable centenarians.</description>
+      <pubDate>Fri, 06 May 2011 14:30:18 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/53/pod157resound143_Centenarians_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/53/pod157resound143_Centenarians_.mp3</guid>
+      <itunes:duration>1:60:0-3565</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="116329224" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/53/pod157resound143_Centenarians_.mp3"/>
+    </item>
+    <item>
+      <title>Spotlight #64 Cognitive Dissonance: Lightning in a Bottle</title>
+      <description>This hour: Who recorded the first sounds? It might not be who you think. </description>
+      <pubDate>Thu, 28 Apr 2011 21:21:04 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/52/pod156spotlight62_cognitive_dissonance_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/52/pod156spotlight62_cognitive_dissonance_.mp3</guid>
+      <itunes:duration>0:35:33</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="68268097" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/52/pod156spotlight62_cognitive_dissonance_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 97 The In-Between Show  (originally broadcast in 2007)</title>
+      <description>People living between worlds. *note, podcast does not include all pieces from the original broadcast due to rights issues. </description>
+      <pubDate>Fri, 22 Apr 2011 14:35:24 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/51/pod155resound97_in_between_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/51/pod155resound97_in_between_.mp3</guid>
+      <itunes:duration>0:46:08</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="88595960" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/51/pod155resound97_in_between_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #88 The Messages Show (originally aired in 2008)</title>
+      <description>Phone solicitors, bottle evangelists, a mysterious cassette tape unearthed in the attic, and more.</description>
+      <pubDate>Thu, 14 Apr 2011 22:13:54 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/50/pod154resound88_messages_retry_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/50/pod154resound88_messages_retry_.mp3</guid>
+      <itunes:duration>1:60:0-3563</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116395261" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/50/pod154resound88_messages_retry_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #142 The Book Odds Show</title>
+      <description>The results of our 2010 Short Docs Challenge, Book Odds.</description>
+      <pubDate>Thu, 07 Apr 2011 22:35:23 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/49/pod153resound142_bookodds_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/49/pod153resound142_bookodds_.mp3</guid>
+      <itunes:duration>1:60:0-3573</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116096003" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/49/pod153resound142_bookodds_.mp3"/>
+    </item>
+    <item>
+      <title>Spotlight #62 Practice, Practice, Practice</title>
+      <description>Musicians muse on the meaning of the their work. </description>
+      <pubDate>Fri, 01 Apr 2011 18:31:38 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/48/Spotlight_practice.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/48/Spotlight_practice.mp3</guid>
+      <itunes:duration>0:10:52</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="6527252" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/48/Spotlight_practice.mp3"/>
+    </item>
+    <item>
+      <title>Spotlight # 61 Downtown Avant Gard</title>
+      <description>John Zorn: American master of free jazz, improvisation and innovation. </description>
+      <pubDate>Thu, 24 Mar 2011 18:47:09 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/47/pod151spotlight61_zorn_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/47/pod151spotlight61_zorn_.mp3</guid>
+      <itunes:duration>0:30:01</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="57661129" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/47/pod151spotlight61_zorn_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #141 The Hustling Show</title>
+      <description>This hour: Hustlers. Some are straight up con artists, and others are just doing what they have to do to get by. *note, due to rights limitations, the podcast does not include all of the pieces from the original broadcast. </description>
+      <pubDate>Thu, 17 Mar 2011 19:40:48 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/46/pod150resound141.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/46/pod150resound141.mp3</guid>
+      <itunes:duration>0:39:13</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="75328264" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/46/pod150resound141.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 83 The Going Up Show (orginally aired in 2008)</title>
+      <description>This hour: climbing, flying and facing your fears.</description>
+      <pubDate>Thu, 10 Mar 2011 20:58:52 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/45/pod149resound83.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/45/pod149resound83.mp3</guid>
+      <itunes:duration>0:59:27</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="114156672" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/45/pod149resound83.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 87 The Magpies Show (originally aired in 2008)</title>
+      <description>This hour: magpies, magpies and more magpies..</description>
+      <pubDate>Fri, 04 Mar 2011 18:02:40 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/44/pod148resound87_magpies_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/44/pod148resound87_magpies_.mp3</guid>
+      <itunes:duration>1:60:0-3599</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="115242530" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/44/pod148resound87_magpies_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 31 The Transmissions Show (orginally aired in 2005)</title>
+      <description>This hour: spies, pirates, mysterious broadcasts, and a bold acoustic experiment.</description>
+      <pubDate>Thu, 24 Feb 2011 21:43:47 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/43/Pod147Resound31_Transmissions_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/43/Pod147Resound31_Transmissions_.mp3</guid>
+      <itunes:duration>1:60:0-3573</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116071761" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/43/Pod147Resound31_Transmissions_.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 140 The Country-Western Show</title>
+      <description>This hour: Every country song tells a story and has a story behind it. </description>
+      <pubDate>Fri, 18 Feb 2011 15:19:13 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/42/pod146Resound140_country-western_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/42/pod146Resound140_country-western_.mp3</guid>
+      <itunes:duration>0:41:29</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="79650798" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/42/pod146Resound140_country-western_.mp3"/>
+    </item>
+    <item>
+      <title>Spotlight # 60 The Artangel Podcast </title>
+      <description>This week: An immersive sonic exploration through the subject of memory.</description>
+      <pubDate>Fri, 11 Feb 2011 23:43:30 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/41/pod145spotlight60_artangel_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/41/pod145spotlight60_artangel_.mp3</guid>
+      <itunes:duration>0:28:21</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="54447859" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/41/pod145spotlight60_artangel_.mp3"/>
+    </item>
+    <item>
+      <title>Spotlight # 59 Lucia's Letter</title>
+      <description>The story of women who travel thousands of miles to become slaves in the U.S. </description>
+      <pubDate>Fri, 04 Feb 2011 22:30:00 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/40/pod144spotlight59.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/40/pod144spotlight59.mp3</guid>
+      <itunes:duration>0:56:04</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="107658243" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/40/pod144spotlight59.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound #139 The Metamorphosis Show</title>
+      <description>This hour two people shed old skins and resurface in foreign territory.</description>
+      <pubDate>Fri, 28 Jan 2011 20:01:28 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/39/pod143Resound139_metamorphosis_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/39/pod143Resound139_metamorphosis_.mp3</guid>
+      <itunes:duration>1:60:0-3573</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="116075105" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/39/pod143Resound139_metamorphosis_.mp3"/>
+    </item>
+    <item>
+      <title>Resound # 120 The Poetry Show (orginally aired in 2010)</title>
+      <description>This hour: Poetry as documentary and documentary as poetry</description>
+      <pubDate>Thu, 20 Jan 2011 18:53:35 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/38/Pod142Resound120_poetry_.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/38/Pod142Resound120_poetry_.mp3</guid>
+      <itunes:duration>0:58:56</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="113178648" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/38/Pod142Resound120_poetry_.mp3"/>
+    </item>
+    <item>
+      <title>Resound # 119 The Cambio Show (orginally aired in 2010)</title>
+      <description>This hour: Stories of change and resistance to change. </description>
+      <pubDate>Thu, 13 Jan 2011 20:46:34 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/37/pod141Resound119.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/37/pod141Resound119.mp3</guid>
+      <itunes:duration>0:59:29</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="114214350" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/37/pod141Resound119.mp3"/>
+    </item>
+    <item>
+      <title>Resound # 138 The Running Show</title>
+      <description>Running on two legs, running on four, but most importantly, running with all your might.</description>
+      <pubDate>Sat, 08 Jan 2011 00:00:29 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/36/pod140Resound138.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/36/pod140Resound138.mp3</guid>
+      <itunes:duration>0:59:56</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mpeg" length="115097080" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/36/pod140Resound138.mp3"/>
+    </item>
+    <item>
+      <title>Re:sound # 100 The Cambodia Show (originally aired in 2008)</title>
+      <description>This hour: sounds and stories from Cambodia.</description>
+      <pubDate>Thu, 30 Dec 2010 18:31:11 +0000</pubDate>
+      <link>http://s3.amazonaws.com/3rdcoast-podcasts/files/35/pod139Resound100.mp3</link>
+      <guid>http://s3.amazonaws.com/3rdcoast-podcasts/files/35/pod139Resound100.mp3</guid>
+      <itunes:duration>1:60:0-3573</itunes:duration>
+      <itunes:author>Author</itunes:author>
+      <enclosure type="audio/mp3" length="116084300" url="http://s3.amazonaws.com/3rdcoast-podcasts/files/35/pod139Resound100.mp3"/>
+    </item>
+  </channel>
+</rss>

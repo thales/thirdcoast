@@ -1,0 +1,29 @@
+<div class="rightCol">
+
+<h1>New sidebar tile</h1>
+
+<% form_for [:admin, @side_bar_tile], :html => { :multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+   <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  
+  <p>
+    <%= f.label :file %><br />
+    <%= f.file_field :file %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_side_bar_tiles_path %>
+</div>
+

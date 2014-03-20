@@ -1,0 +1,43 @@
+<%= form.error_messages %>
+
+  <p>
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+  </p>
+  
+  <p>
+    <%= form.label :flavor, "Type" %><br />
+    <%= form.select :flavor, [["Regular", "regular"], ["Deadline", "deadline"]]  %>
+  </p>
+  <p>
+    <%= form.label :short_description %><br />
+    <%= form.text_area :short_description, :class => "ckeditor-panel", :size => "44x5" %>
+  </p>
+
+
+  <p>
+    <%= form.label "Event Photo" %><br />
+    <%= form.file_field :photo%>
+  </p>
+
+
+  <p>
+    <%= form.label "Event Date" %><br />
+    <input id="datepicker" size="30" name="event[e_date]" type="text" value="<%= @event.e_date %>" />
+  </p>
+  
+  <p class="event_non_deadline_only" <%= form.object.deadline? ? 'style="display:none"' : nil %> >
+    <%= form.label :host %><br />
+    <%= form.text_field :host %>
+  </p>
+  
+  <p class="event_non_deadline_only" <%= form.object.deadline? ? 'style="display:none"' : nil %> >
+    <%= form.label :location %><br />
+    <%= form.text_field :location %>
+  </p>
+  
+  <p>
+    <%= form.label :is_3rdcoastevent %>
+    <%= form.check_box :is_3rdcoastevent %>
+  </p>
+

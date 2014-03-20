@@ -1,0 +1,55 @@
+<div id="calendar_header">
+  <div id="calendar_header_prev">
+    <%= link_to (image_tag "cal_left_arrow.png"), other_month_url(:prev), :class=>'calendar_month_link'  %>
+  </div>
+  <div id="calendar_header_next">
+    <%= link_to (image_tag 'cal_right_arrow.png'), other_month_url(:next), :class=>'calendar_month_link'  %>
+  </div>
+  <div id="calendar_header_center">
+    <%= @date.strftime('%B %Y') %>
+  </div>
+</div>
+
+<div id="calendar_subheader">
+  <% %w(Sun Mon Tue Wed Thu Fri Sat).each do |abbr| %>
+    <div class="calendar_block_day">
+      <%= abbr %>
+    </div>
+  <% end %>
+  <div style="clear:both"></div>
+</div>
+
+<div id="calendar_block">
+  <% month_offset(@date.year, @date.month).times do |time| %>
+    <div class="calendar_block_day calendar_block_day_inactive">
+      <%= days_in_prev_month - (month_offset(@date.year, @date.month) - time) + 1 %>
+    </div>
+  <% end %>
+
+  <% days_in_month(@date.year, @date.month).times do |time| %>
+    <div alt="<%= time+1 %>" class="calendar_block_day <%= day_events_css(@date.year, @date.month, time + 1, @events) %>">
+      <%= time + 1 %>
+
+    </div>
+  <% end %>
+
+  <% month_left(@date.year, @date.month).times do |time| %>
+    <div class="calendar_block_day calendar_block_day_inactive">
+      <%= time + 1 %>
+    </div>
+  <% end %>
+  <div style="clear:both"></div>
+</div>
+<br>
+<br>
+<div id="events_block">
+  <% @events.each do |event| %>
+    <div class="event_block event_block_for_day_<%= event.e_date.day %>">
+      <div class="subheader">
+        <%= event.name %>, <%= event.formatted_date %>
+      </div>
+        <%= event.short_description %>
+    </div>
+    <br/>
+  <% end %>
+</div>

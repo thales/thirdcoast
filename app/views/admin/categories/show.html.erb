@@ -1,0 +1,19 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+<p>
+  <b>Name:</b>
+  <%=h @category.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @category.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_category_path(@category) %> |
+<%= link_to 'Back', admin_categories_path %>
+</div>    

@@ -1,0 +1,186 @@
+#page-cover { 
+  background-color:black; 
+  background-color:rgba(0,0,0,0.8); 
+  width:100%; 
+  height:100%; 
+  position:absolute; 
+  left:0; 
+  right:0; 
+  margin-top:-20px;  
+  display:table-cell; 
+  vertical-align:middle; 
+  text-align:left; 
+  display:none; 
+} 
+#donate-popup { 
+  position:relative; 
+  margin:0 auto; 
+  margin-top:245px;  
+  width:660px; 
+  height:570px; 
+  background: url(/images/TCF005_popup_v4a.jpg) right top no-repeat;
+  /*background: #fff;*/
+}
+#donate-popup-2 {
+  position:relative;
+  margin:0 auto;
+  margin-top:245px;
+  width:660px;
+  height:570px;
+  background: url(/images/TCF005_popup_v4a2.jpg) right top no-repeat;
+  /*background: #fff;*/
+}
+#donate-popup h1, #donate-popup-2 h1 { 
+  display:none; 
+  position:absolute; 
+  top:107px; 
+  left:44px; 
+  text-indent:-9000px; 
+  width:470px; 
+  height:32px; 
+  /*background:transparent url(/images/txt-hugged.png) left top no-repeat;*/ 
+}
+#donate-popup h2, #donate-popup-2 h2 { 
+  display:none; 
+  position:absolute; 
+  top:162px; 
+  left:44px; 
+  text-indent:-9000px; 
+  width:263px;
+  height:19px; 
+  /*background:transparent url(/images/txt-hereschance.png) left top no-repeat;*/ 
+}
+#donate-popup p.body, #donate-popup-2 p.body { 
+  display:none; 
+  position:absolute; 
+  top:190px; 
+  left:43px; 
+  text-indent:-9000px; 
+  width:455px; 
+  height:56px;
+  /* background:transparent url(/images/txt-donationpopup.png) left top no-repeat;*/ 
+}
+#donate-popup p.donate-now, #donate-popup-2 p.donate-now { 
+  position:absolute; 
+  top:250px;
+  left:505px;
+  width:127px;
+  height:80px;  
+}
+
+#donate-popup p.donate-now a, #donate-popup-2 p.donate-now a { 
+  display:block; 
+  text-indent:-9000px; 
+  height:80px;
+  width:127px; 
+  /*background:transparent url(/images/3C_donate_popup_v5-2-button.jpg) left top no-repeat;*/ 
+}
+#donate-popup p.close a, #donate-popup-2 p.close a { 
+  position:absolute; 
+  right:13px; 
+  top:12px; 
+  display:block; 
+  text-indent:-9000px; 
+  height:32px; 
+  width:32px; 
+ /* background:transparent url(/images/close-button-red.png) left top no-repeat; */
+}
+
+
+.player_mini{
+  display: inline-block;
+}
+
+.player_mini .icon{
+  display: inline-block;
+  width: 40px;
+  height: 16px;
+  background: url(/images/player_new_buttons.png) no-repeat 0 0;
+  position: relative;
+  top: 3px;
+  margin:0px;
+  margin-left: 5px;
+  padding:0px;
+}
+
+.player_mini:hover .icon{
+  background: url(/images/player_new_buttons.png) no-repeat 0 -17px;
+}
+
+.player_mini.paused .icon{
+  background: url(/images/player_new_buttons.png) no-repeat -41px 0;
+}
+.player_mini.paused:hover .icon{
+  background: url(/images/player_new_buttons.png) no-repeat -41px -17px;
+}
+
+.mini_player_tooltip{
+  text-decoration: none !important;
+  background-color: #f1ebe6;
+  -moz-border-radius: 10px;
+  font-size: 12px !important;
+  display: inline-block !important;
+  margin-left: 3px !important;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  width: 100px !important;
+  font-weight: normal;
+  height: 16px !important;
+}
+/*ImageViewer*/
+
+.imageViewerOverlay, .imageViewerOverlayText{
+  position:absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.imageViewerOverlay{
+  background-color: #fff;
+  height:16px;
+  opacity: 0.7;
+  filter: alpha(opacity = 70);
+  z-index: 99;
+}
+.imageViewerOverlayText{
+  text-align: center;
+  padding:3px;
+  z-index: 99;
+  font-size: 10px;
+  font-family: verdana;
+}
+
+.imageViewerOverlayArrowLeft, .imageViewerOverlayArrowRight{
+  position: absolute;
+/*  width: 13px;*/
+/*  height: 30px;*/
+}
+
+.imageViewerOverlayArrowLeft{
+  left: 5px;
+}
+
+.imageViewerOverlayArrowRight{
+  right: 5px;
+}
+
+.imageViewerContainer{
+  text-align: center;
+/*  background-color: #d5ceca;*/
+}
+
+.imageViewerContainer .arrows{
+  display:none;
+  z-index: 99;
+}
+
+.imageViewerContainer .activeImage{
+}
+
+.imageViewerContainer .lastActiveImage{
+  z-index: -1;
+  position: absolute;
+}

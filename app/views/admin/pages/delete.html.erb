@@ -1,0 +1,15 @@
+<div class="rightCol" style="width:800px">
+  <h1>Delete page</h1>
+  
+  <% if @page.destroyable? %>
+    Are you sure that you want to delete "<%= @page.title %>"?  
+    <br>
+    <br>
+    ****THIS WILL DESTROY CONTENT OF THIS PAGE********
+    <br>
+    <br>
+    <%= button_to "Delete this page", delete_do_admin_page_path %>
+  <% else %>
+    This page has children pages in menu. Please move them in <%= link_to 'menu', admin_menu_index_path %> before deleting this page.
+  <% end %>
+</div>

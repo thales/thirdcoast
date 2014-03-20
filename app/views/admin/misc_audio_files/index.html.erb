@@ -1,0 +1,29 @@
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'Add Misc. Audio File', new_admin_misc_audio_file_path %></p>
+    <h2>Misc Audio Files</h2>
+  </div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+      <th></th>
+    </tr>
+    <% @files.each do |file| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= file.name %></td>
+        <td>
+            <input class="allselectable" value="<%= file.file.url %>" size="50">
+            <div class="clippy_container"><%= clippy(file.file.url) %></div>
+        </td>
+        <td>
+            <%= link_to "delete", admin_misc_audio_file_path(file), :method => :delete, :confirm => "Are you sure to delete \"#{file.name}\"?" %>
+        </td>
+      </tr>
+    <% end -%>
+  </table>
+  <br />
+
+  <%= will_paginate(@files) %>
+
+</div>

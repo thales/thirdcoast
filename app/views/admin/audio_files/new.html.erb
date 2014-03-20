@@ -1,0 +1,28 @@
+<div class="rightCol">
+<h2>Upload Audio File for feature: <%= link_to "#{@feature.title}", admin_feature_path(@feature) %></h2>
+
+<% form_for [:admin,@audio_file], :html => { :multipart => true}  do |f| %>
+  <%= hidden_field_tag :feature_id, @feature.id %>    
+  <%= f.error_messages %>
+  <ul>
+     <li>
+       <div>
+	 <%= f.label :audio, "Upload an audio file" %>
+         <%= f.file_field :mp3 %>
+       </div>
+     </li>
+     <li>
+       <%= f.label :duration, "Duration - eg: HH:MM:SS", :class => "desc" %>
+       <%= f.text_field :hours, "size" => 2 %> <%= f.text_field :minutes, "size" => 2 %> <%= f.text_field :seconds, "size" => 2 %>
+     </li>
+    <li>
+      <%= f.label :downloadable,"Downloadable", :class => "desc" %>
+      <%= f.check_box :downloadable  %>
+    </li>
+   </ul> <br/><br/>
+    <div>
+    <%= f.submit "Upload", :class => "button" %>
+    <%= link_to "Cancel", admin_feature_audio_file_path(@feature) %>
+      </div>
+<% end -%>                                                                       
+</div>

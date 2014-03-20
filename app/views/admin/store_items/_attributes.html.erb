@@ -1,0 +1,98 @@
+<div id="attribute-pane">
+  <div class="attribute-pane-left">
+		<p>
+		<label>Attribute 1:</label><br>
+		<input type="text" name="store_item_attr_title[<% if @store_item.store_item_attr_titles[0].nil? %>a<% else %>a-<%=@store_item.store_item_attr_titles[0].id %><% end %>]" value="<%= @store_item.store_item_attr_titles[0].title unless @store_item.store_item_attr_titles[0].nil? %>">
+		</p>
+		<div  class="value-pane">
+			<p>
+			<label>Value 1:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[0].nil? or @store_item.store_item_attr_titles[0].store_item_attr_vals[0].nil? %>[a][1]<% else %>[a-<%=@store_item.store_item_attr_titles[0].store_item_attr_vals[0].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[0].nil? and !@store_item.store_item_attr_titles[0].store_item_attr_vals[0].nil? %><%= @store_item.store_item_attr_titles[0].store_item_attr_vals[0].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 2:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[0].nil? or @store_item.store_item_attr_titles[0].store_item_attr_vals[1].nil? %>[a][2]<% else %>[a-<%=@store_item.store_item_attr_titles[0].store_item_attr_vals[1].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[0].nil? and !@store_item.store_item_attr_titles[0].store_item_attr_vals[1].nil? %><%= @store_item.store_item_attr_titles[0].store_item_attr_vals[1].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 3:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[0].nil? or @store_item.store_item_attr_titles[0].store_item_attr_vals[2].nil? %>[a][3]<% else %>[a-<%=@store_item.store_item_attr_titles[0].store_item_attr_vals[2].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[0].nil? and !@store_item.store_item_attr_titles[0].store_item_attr_vals[2].nil? %><%= @store_item.store_item_attr_titles[0].store_item_attr_vals[2].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 4:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[0].nil? or @store_item.store_item_attr_titles[0].store_item_attr_vals[3].nil? %>[a][4]<% else %>[a-<%=@store_item.store_item_attr_titles[0].store_item_attr_vals[3].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[0].nil? and !@store_item.store_item_attr_titles[0].store_item_attr_vals[3].nil? %><%= @store_item.store_item_attr_titles[0].store_item_attr_vals[3].val %><% end %>">
+			</p>
+				<p>
+			<label>Value 5:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[0].nil? or @store_item.store_item_attr_titles[0].store_item_attr_vals[4].nil? %>[a][5]<% else %>[a-<%=@store_item.store_item_attr_titles[0].store_item_attr_vals[4].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[0].nil? and !@store_item.store_item_attr_titles[0].store_item_attr_vals[4].nil? %><%= @store_item.store_item_attr_titles[0].store_item_attr_vals[4].val %><% end %>">
+			</p>
+				<p>
+			<label>Value 6:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[0].nil? or @store_item.store_item_attr_titles[0].store_item_attr_vals[5].nil? %>[a][6]<% else %>[a-<%=@store_item.store_item_attr_titles[0].store_item_attr_vals[5].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[0].nil? and !@store_item.store_item_attr_titles[0].store_item_attr_vals[5].nil? %><%= @store_item.store_item_attr_titles[0].store_item_attr_vals[5].val %><% end %>">
+			</p>
+		</div>
+  </div>
+  <div class="attribute-pane-right">
+		<p>
+		<label>Attribute 2:</label><br>
+		<input type="text" name="store_item_attr_title[<% if @store_item.store_item_attr_titles[1].nil? %>b<% else %>b-<%=@store_item.store_item_attr_titles[1].id %><% end %>]" value="<%= @store_item.store_item_attr_titles[1].title unless @store_item.store_item_attr_titles[1].nil? %>">
+		</p>
+		<div class="value-pane">
+			<p>
+			<label>Value 1:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[1].nil? or @store_item.store_item_attr_titles[1].store_item_attr_vals[0].nil? %>[b][1]<% else %>[b-<%=@store_item.store_item_attr_titles[1].store_item_attr_vals[0].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[1].nil? and !@store_item.store_item_attr_titles[1].store_item_attr_vals[0].nil? %><%= @store_item.store_item_attr_titles[1].store_item_attr_vals[0].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 2:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[1].nil? or @store_item.store_item_attr_titles[1].store_item_attr_vals[1].nil? %>[b][2]<% else %>[b-<%=@store_item.store_item_attr_titles[1].store_item_attr_vals[1].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[1].nil? and !@store_item.store_item_attr_titles[1].store_item_attr_vals[1].nil? %><%= @store_item.store_item_attr_titles[1].store_item_attr_vals[1].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 3:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[1].nil? or @store_item.store_item_attr_titles[1].store_item_attr_vals[2].nil? %>[b][3]<% else %>[b-<%=@store_item.store_item_attr_titles[1].store_item_attr_vals[2].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[1].nil? and !@store_item.store_item_attr_titles[1].store_item_attr_vals[2].nil? %><%= @store_item.store_item_attr_titles[1].store_item_attr_vals[2].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 4:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[1].nil? or @store_item.store_item_attr_titles[1].store_item_attr_vals[3].nil? %>[b][4]<% else %>[b-<%=@store_item.store_item_attr_titles[1].store_item_attr_vals[3].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[1].nil? and !@store_item.store_item_attr_titles[1].store_item_attr_vals[3].nil? %><%= @store_item.store_item_attr_titles[1].store_item_attr_vals[3].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 5:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[1].nil? or @store_item.store_item_attr_titles[1].store_item_attr_vals[4].nil? %>[b][5]<% else %>[b-<%=@store_item.store_item_attr_titles[1].store_item_attr_vals[4].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[1].nil? and !@store_item.store_item_attr_titles[1].store_item_attr_vals[4].nil? %><%= @store_item.store_item_attr_titles[1].store_item_attr_vals[4].val %><% end %>">
+			</p>
+			<p>
+			<label>Value 6:</label><br>
+			<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[1].nil? or @store_item.store_item_attr_titles[1].store_item_attr_vals[5].nil? %>[b][6]<% else %>[b-<%=@store_item.store_item_attr_titles[1].store_item_attr_vals[5].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[1].nil? and !@store_item.store_item_attr_titles[1].store_item_attr_vals[5].nil? %><%= @store_item.store_item_attr_titles[1].store_item_attr_vals[5].val %><% end %>">
+			</p>
+		</div>
+	</div>
+  <div class="attribute-pane-right-end">
+			<p>
+			<label>Attribute 3:</label><br>
+			<input type="text" name="store_item_attr_title[<% if @store_item.store_item_attr_titles[2].nil? %>b<% else %>b-<%=@store_item.store_item_attr_titles[2].id %><% end %>]" value="<%= @store_item.store_item_attr_titles[2].title unless @store_item.store_item_attr_titles[2].nil? %>">
+			</p>
+			<div class="value-pane">
+				<p>
+				<label>Value 1:</label><br>
+				<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[2].nil? or @store_item.store_item_attr_titles[2].store_item_attr_vals[0].nil? %>[c][1]<% else %>[c-<%=@store_item.store_item_attr_titles[2].store_item_attr_vals[0].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[2].nil? and !@store_item.store_item_attr_titles[2].store_item_attr_vals[0].nil? %><%= @store_item.store_item_attr_titles[2].store_item_attr_vals[0].val %><% end %>">
+				</p>
+				<p>
+				<label>Value 2:</label><br>
+				<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[2].nil? or @store_item.store_item_attr_titles[2].store_item_attr_vals[1].nil? %>[c][2]<% else %>[c-<%=@store_item.store_item_attr_titles[2].store_item_attr_vals[1].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[2].nil? and !@store_item.store_item_attr_titles[2].store_item_attr_vals[1].nil? %><%= @store_item.store_item_attr_titles[2].store_item_attr_vals[1].val %><% end %>">
+				</p>
+				<p>
+				<label>Value 3:</label><br>
+				<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[2].nil? or @store_item.store_item_attr_titles[2].store_item_attr_vals[2].nil? %>[c][3]<% else %>[c-<%=@store_item.store_item_attr_titles[2].store_item_attr_vals[2].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[2].nil? and !@store_item.store_item_attr_titles[2].store_item_attr_vals[2].nil? %><%= @store_item.store_item_attr_titles[2].store_item_attr_vals[2].val %><% end %>">
+				</p>
+				<p>
+				<label>Value 4:</label><br>
+				<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[2].nil? or @store_item.store_item_attr_titles[2].store_item_attr_vals[3].nil? %>[c][4]<% else %>[c-<%=@store_item.store_item_attr_titles[2].store_item_attr_vals[3].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[2].nil? and !@store_item.store_item_attr_titles[2].store_item_attr_vals[3].nil? %><%= @store_item.store_item_attr_titles[2].store_item_attr_vals[3].val %><% end %>">
+				</p>
+				<p>
+				<label>Value 5:</label><br>
+				<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[2].nil? or @store_item.store_item_attr_titles[2].store_item_attr_vals[4].nil? %>[c][5]<% else %>[c-<%=@store_item.store_item_attr_titles[2].store_item_attr_vals[4].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[2].nil? and !@store_item.store_item_attr_titles[2].store_item_attr_vals[4].nil? %><%= @store_item.store_item_attr_titles[2].store_item_attr_vals[4].val %><% end %>">
+				</p>
+				<p>
+				<label>Value 6:</label><br>
+				<input type="text" name="store_item_attr_val<% if @store_item.store_item_attr_titles[2].nil? or @store_item.store_item_attr_titles[2].store_item_attr_vals[5].nil? %>[c][6]<% else %>[c-<%=@store_item.store_item_attr_titles[2].store_item_attr_vals[5].id %>]<% end %>" value="<% if !@store_item.store_item_attr_titles[2].nil? and !@store_item.store_item_attr_titles[2].store_item_attr_vals[5].nil? %><%= @store_item.store_item_attr_titles[2].store_item_attr_vals[5].val %><% end %>">
+				</p>
+			</div>
+		</div>
+  </div>

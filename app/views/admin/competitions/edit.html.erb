@@ -1,0 +1,20 @@
+<div class="rightCol">
+
+
+<h1>Edit competition</h1>
+
+<% form_for([:admin,@competition]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_competition_path(@competition) %> |
+<%= link_to 'Cancel', admin_competitions_path %>
+</div>

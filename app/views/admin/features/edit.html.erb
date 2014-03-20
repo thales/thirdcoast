@@ -1,0 +1,44 @@
+<h1>Editing feature</h1>
+<div class="rightCol">
+ 
+<% form_for([:admin, @feature]) do |f| %>
+  
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title, 'Title', :class => "desc" %>
+    <%= f.text_field :title %>
+  </p><br />
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "ckeditor-panel" %>
+  </p>       <br />
+
+  <p>
+    <%= f.label :origin_country, "Country Of Origin" %>
+    <%= f.text_field :origin_country %>
+  </p>             <br />
+
+  <p>
+    <%= f.label :premir_location, "First Presented At" %>
+    <%= f.text_field :premier_locaction %>
+  </p>                   <br />
+
+  <p>
+    <%= f.label :premier_date,  "First presented Date" %>
+    <%= f.text_field :premier_date %>
+    <span>eg: 2003</span>
+  </p>                         <br />
+
+    <div id="notice_container">
+      <%= f.check_box 'published', {:class => :checkbox}  %>
+      <span><label for="published" class="choice">Click the checkbox to  publish this feature</label></span>
+    </div>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_feature_path(@feature) %> |
+<%= link_to 'Back', admin_feature_url %>
+</div>

@@ -1,0 +1,23 @@
+<div class="content-block-wrapper library-item-container">
+  <div class="library-item-info">
+    <ul>
+      <li><%= feature.premier_date %></li>
+      <% if feature.audio_file and feature.audio_file.duration %>
+        <li><%= toHHMM(feature.audio_file.duration)%></li>
+      <% end %>
+      <li><%= feature.origin_country %></li>
+    </ul>
+    <p class="clearfix"><%= link_to "", player_url(feature), :rel => 'playerPopup', :class => "listen_link" %></p>
+    <!-- <p class="clearfix"><%= link_to (image_tag 'listen-button.png', :class => "listen_button" ), player_url(feature), :rel => 'playerPopup'%></p> -->
+    <p class="addToPlayList"><%= link_to 'Add to Playlist', '#', :class=>'add_to_playlist', :title => feature.title, :alt => feature.id %><p>
+  </div>
+  <div class="content-wrapper">
+    <p class="header"><%= feature.title %></p>
+    <p class="sub-header"> By <%= producer_for(feature)%> </p>
+    <div class="body"><%= truncate_feature_description(feature) %></div>
+  </div>
+  
+   <a href=<%= feature.primary_image(:maximum) %> rel="lightbox"><%= image_tag feature.primary_image %></a> 
+  <!--  <%= image_tag feature.primary_image %>  -->
+   <%= image_tag "TCF-Winner-Award.png", :class => "winner_award_badge" if feature.winner? %> 
+</div>

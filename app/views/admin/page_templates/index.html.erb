@@ -1,0 +1,20 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+<h1>All page templates</h1>
+
+<table>
+
+<% @page_templates.each do |page_template| %>
+  <tr>
+    <td><%= link_to "#{page_template.title}", admin_page_template_path(page_template) %></td>
+    <td><%= link_to 'Edit', edit_admin_page_template_path(page_template) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'New page template', new_admin_page_template_path %>
+</div>    

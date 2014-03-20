@@ -1,0 +1,29 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class="rightCol">
+
+<h1>Editing page template</h1>
+
+<% form_for([:admin,@page_template]) do |f| %>
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_page_template_path(@page_template) %> |
+<%= link_to 'Cancel', admin_page_templates_path %>
+</div>    

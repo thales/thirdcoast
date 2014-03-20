@@ -1,0 +1,25 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div class='rightCol'>
+<h1>All Producers for Feature</h1>
+
+<%= link_to 'New producer', new_admin_producer_path %>
+
+<table>
+
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @producers.each do |producer| %>
+  <tr>
+     <td><%= link_to "#{producer.name}", admin_producer_path(producer) %></td>
+     <td><%= link_to 'Edit', edit_admin_producer_path(producer) %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+    

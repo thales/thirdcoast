@@ -1,0 +1,20 @@
+
+<div class="rightCol">
+<h1>Listing collections <%= link_to "#{@feature.title}", admin_feature_path(@feature) %> </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @feature.collections.each do |collection| %>
+  <tr>
+    <td><%=h collection.name %></td>
+      </tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_admin_feature_path(@feature,:ref => "collections") %>
+</div>
+
+

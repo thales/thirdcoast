@@ -1,0 +1,22 @@
+<div class="rightCol">
+<h1>Editing collection for </h1> <%= @feature.title  %>
+
+<% form_for [:admin,@feature] do |f|%>
+
+  <%= hidden_field_tag "feature[collection_ids][]", "" %>
+  <%= hidden_field_tag "ref", params[:ref] %>
+<div>
+    <% for collection in Collection.find(:all, :order => 'name') %>
+    <div>
+   <%= check_box_tag "feature[collection_ids][]", collection.id,
+                   @feature.collections.include?(collection) %>
+    <%= collection.name %>
+   <% end -%>
+   </div>
+  </div>
+  <p>
+  <%= f.submit 'Update' %>
+  <%= link_to "cancel", admin_feature_path(@feature) %>
+  </p>
+<% end %>
+</div>

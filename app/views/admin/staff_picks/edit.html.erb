@@ -1,0 +1,11 @@
+<div class=rightCol>
+  <h1>Editing staff_pick</h1>
+
+  <% form_for([:admin, @staff_pick]) do |form| %>
+    <%= render :partial => 'form', :locals => {:form => form} %>
+    <p><%= form.submit 'Update' %></p>
+  <% end %>
+
+  <%= link_to 'Show', admin_staff_pick_path %> |
+  <%= link_to 'Back', admin_staff_picks_path %>
+</div>

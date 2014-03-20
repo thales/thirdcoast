@@ -1,0 +1,11 @@
+<div class="content-block-wrapper">
+  <div class="home-text">
+    <%= link_to "ON RE:SOUND", "/broadcasts/re-sound", :class => "header" %>
+    <p class="sub-header"> <%= feature.title %> </p>        
+    <p class="body"> <%= truncate_feature_description feature %></p>
+    <p class="clearfix"><%= link_to "", player_path(feature), :rel => 'playerPopup', :class => "listen_link" %></p>
+    
+  </div>
+    <a href=<%= feature.primary_image(:maximum) %> rel="lightbox"><%= image_tag feature.primary_image %></a>
+    <!--  <%= image_tag feature.primary_image %>  -->
+</div>

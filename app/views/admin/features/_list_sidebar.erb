@@ -1,0 +1,30 @@
+<div id="leftCol">
+  <br />
+  <div id="admin_feature_filters_link">
+    <%= link_to "Reset Filters", "#", :id => "reset_filters" %>
+    <br />
+    <% form_tag admin_features_path, :method=>:get, :id=>'features_filters' do -%>
+      <br /><br />
+      <%= select_tag nil, options_for_select([['Filter by...', ""], ['Collections', 'collections']]), :id => 'features_filters_filter_by' %>
+      <br />
+      <div id="filter_by_collections" <%= params[:collection].blank? ? "style='display:none;'" : "style='display:block;'" %>>
+        <% Collection.all.each do |collection| %>
+          <a id="collection_<%= collection.id %>" href="?collection=<%=collection.id%>"><%= collection.name %> (<%= collection.features.size %>)</a>
+          <br />
+        <% end%>
+      </div>
+      <br />
+      <%= select_tag :order_by, options_for_select([['Sort by...', ""], ['Most Recent', 'recent'], ['Recently Modified', 'r_update'], ['Titles (A-Z)', 'title']], params[:order_by]), :id => 'features_filters_order_by' %>
+      <%= hidden_field_tag :collection, params[:collection], :id => 'features_filters_collection' %>
+      <%= hidden_field_tag :char, "", :id => 'features_filters_begin_with' %>
+    <% end %>
+    
+    <br>
+    <% form_tag search_admin_features_path, :method => :get do %>
+      <%= label_tag "search_name", "Search by name" %>
+      <br>
+      <%= text_field_tag "q", params[:q] || "", :id => "search_name"  %> <%= submit_tag "Go" %>
+    <% end %>
+
+  </div>
+</div>

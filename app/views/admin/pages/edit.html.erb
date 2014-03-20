@@ -1,0 +1,55 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<!-- Page Templates to Javascript -->
+
+<script type="text/javascript">
+  var templates = <%= PageTemplate.all.map{|tpl| [tpl.id, tpl.content]}.to_json %>;
+  var page_id = <%= @page.id %>;
+</script>
+
+<div class="rightCol" style="width:800px">
+
+<h1>Editing page</h1>
+
+<% form_for([:admin,@page]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+    <%= f.label :short_description %><br />
+    <%= f.text_field :short_description %>
+  </p>
+  
+    <% f.fields_for :parts do |p| %>
+      <div style="<%=f.object.get_style_for(p.object.name)%>" rel="section_container">
+        <b><%= p.object.name.capitalize %></b>
+        <br>
+        <%= p.text_area :content, :class=>"ckeditor-panel" %>
+      </div>
+    <% end %>
+  
+  <div id="notice_container" style="clear:both">
+    <%= f.check_box 'published', {:class => :checkbox}  %>
+    <span><label for="published" class="choice">Click the checkbox to  publish this page</label></span>
+  </div>    
+  
+  <div style="padding: 20px 0;">
+  <p style="clear:both; float: left;">
+    <%= f.submit 'Save' %>
+    <%= f.submit 'Preview', :id => "page_preview" %>
+
+    <%= link_to 'Show', admin_page_path(@page) %> |
+    <%= link_to 'Cancel', admin_page_path %> |
+    <%= link_to 'Rebuild page', rebuild_admin_page_path %> |
+    <%= link_to 'Delete page', delete_admin_page_path %>
+  </p>
+  <div>
+<% end %>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="rightCol">
+
+
+<h1>Edit podcast item</h1>
+
+<% form_for [:admin, @podcast_item], :html => { :multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= link_to f.object.file_file_name, f.object.file.url, :rel => "mini_player", :pre_length => f.object.duration if f.object.file.exists? %>
+    <br>
+    <%= f.label :file %><br />
+    <%= f.file_field :file %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', admin_podcast_items_path %> | <%= link_to 'Delete', admin_podcast_item_path(@podcast_item), :method => :delete, :confirm => "Are you sure you?" %>
+</div>
+

@@ -1,0 +1,29 @@
+<div id="content" class="clearfix">
+  <%= render "shared/nav_header" %>
+  <div id="left-col">
+    <%= render "shared/page_menu" %>
+  </div>
+  
+  <div class="content-block-wrapper search-results">
+    <div class="header">Search Results</div>
+    
+    <% @results.each do |s| %>
+      <div class="search-result-container clearfix">
+        <span class="subheader"><%= result_title(s) %></span>
+        <span class="class-name">(<%= disply_class_name(s) %>)</span>
+        
+        <div class="text"><%= result_content(s)%></div>
+      </div>
+    <% end %>
+    
+    <%= will_paginate(@results) %>
+  </div>
+  
+  
+</div>
+
+<div id="right-col">
+  <%= render :partial => "shared/thanks" %>
+    
+  <%= link_to (image_tag "Tile_Beta_Vert.jpg"), "/contactus"%>
+</div>

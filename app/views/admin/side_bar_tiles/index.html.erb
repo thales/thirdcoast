@@ -1,0 +1,101 @@
+<div class="rightCol">
+  <div>
+    <p style="float: right;"><%= link_to 'New sidebar tile', new_admin_side_bar_tile_path %></p>
+    <h2>Side Bar Tiles</h2>
+  </div>
+  <br />
+    <% if flash[:notice ]%>
+    <p style="color: green"><%= flash[:notice] %></p>
+    <br>
+  <% end %>
+  <table>
+  <tr>
+  	<th>Displayed Tiles<th>
+  </tr>
+  <tr>
+  <td>
+<form action="/admins_panel/side_bar_tiles/update" class="edit_side_bar_tiles"  id="edit_side_bar_tiles" method="post"><div style="margin:0;padding:0;display:inline"><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" /></div>
+ <p> 
+    <label for="side_bar_tiles_title">Display 1:</label><br />
+    <select name="side_bar_tiles[display_a]">
+    <% @side_bar_tiles.each do |tile_names| %>
+    <option value="<%=tile_names.id%>"
+        <% if tile_names.displayed.eql?(0) %>
+    SELECTED>
+    <% else %>
+    >
+    <% end %>
+    <%=tile_names.title%>
+    </option>
+    <% end %>
+    </select>
+  </p>
+ <p>
+    <label for="side_bar_tiles_title">Display 2: </label><br />
+    <select name="side_bar_tiles[display_b]">
+      <% @side_bar_tiles.each do |tile_names| %>
+        <option value="<%=tile_names.id%>" 
+          <% if tile_names.displayed.eql?(1) %>
+            SELECTED>
+          <% else %>
+            >
+          <% end %>
+        	<%=tile_names.title%>
+        </option>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="side_bar_tiles_title">Display 3: </label><br />
+    <select name="side_bar_tiles[display_c]">
+    <option value="none">None</option>
+    <% @side_bar_tiles.each do |tile_names| %>
+    <option value="<%=tile_names.id%>" 
+    <% if tile_names.displayed.eql?(2) %>
+    SELECTED>
+    <% else %>
+    >
+    <% end %>
+      <%=tile_names.title%>
+    </option>
+    <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="side_bar_tiles_title">Display 4: </label><br />
+    <select name="side_bar_tiles[display_d]">
+    <option value="none">None</option>
+    <% @side_bar_tiles.each do |tile_names| %>
+    <option value="<%=tile_names.id%>" 
+    <% if tile_names.displayed.eql?(3) %>
+    SELECTED>
+    <% else %>
+    >
+    <% end %>
+      <%=tile_names.title%>
+    </option>
+    <% end %>
+    </select>
+  </p>
+  <p>
+    <input id="side_bar_tiles_submit" name="commit" type="submit" value="Save" />
+  </p>
+
+</form>
+  </td>
+  </tr>
+  </table>
+    <table>
+    <tr>
+      <th>All Tiles</th>
+    </tr>
+    <% @side_bar_tiles.each do |tile| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= "#{tile.title}" %> @ <%= tile.created_at %> (<%= link_to 'edit', edit_admin_side_bar_tile_path(tile)%>)</td>
+      </tr>
+    <% end -%>
+  </table>
+      <p style="float: right;"><%= link_to 'New sidebar tile', new_admin_side_bar_tile_path %></p>
+  <%= will_paginate @side_bar_tiles %>
+</div>
+

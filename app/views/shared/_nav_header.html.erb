@@ -1,0 +1,18 @@
+<div id="navHeader">
+  <div id="main_menu_wrapper">
+    <%= render "shared/main_menu" %>
+
+    <%= print_right_image if @rightimage %>
+</div>
+
+  <ul id="sub-menu">
+    <li><%= link_to "<span>Support</span>Us", "/about-tciaf/supporters/help-us-soar" %></li>
+    <li><%= link_to "<span>Browse</span>Our Library", library_path %></li>
+    <li><%= link_to "<span>Join</span>Our Mailing List", "/about-tciaf/sign-ups" %></li>
+    <li><%= link_to "<span>Subscribe</span>to podcast", "/about-tciaf/sign-ups" %></li>
+    <li><%= link_to "<span>shop</span>our Shoppe", '/about-tciaf/shoppe' %></li>
+    <li><%= link_to "<span>Listen</span>to re:sound", '/library/collections/2-re-sound' %></li>
+  </ul>
+
+
+</div>

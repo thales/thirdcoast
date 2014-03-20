@@ -1,0 +1,20 @@
+<div menu_item_id="<%= item.id %>" parent_id="<%= item.parent_id %>" class="draggable <%= item.is_published? ? "" : "not_published" %>">
+  <div class="menu_item_item <%= cycle("even", "odd") %>" locked="<%= item.is_editable? ? 0 : 1 %>">
+    <span class="menu_item_item_padding">
+      <% item.level.times do %>
+        &nbsp;-
+      <% end %>
+    </span>
+    
+    <% if item.is_editable? %>
+      <%= link_to item.title, edit_admin_page_path(item.page) %>
+    <% else %>
+      <b><%= item.title %></b>
+    <% end %>
+    <span> <%= item.page.short_description %></span>
+  </div>
+  
+  <% item.children.each do |child| %>
+    <%= render "menu_item", :item => child %>
+  <% end %>
+</div>

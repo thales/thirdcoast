@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @staff_pick.name %>
+</p>
+
+<p>
+  <b>Blip:</b>
+  <%=@staff_pick.blip %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_staff_pick_path(@staff_pick) %> |
+<%= link_to 'Back', admin_staff_picks_path %>

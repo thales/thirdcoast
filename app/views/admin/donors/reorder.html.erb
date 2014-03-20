@@ -1,0 +1,40 @@
+<ul id="orderable_donors" class="orderable">
+  <% @donors.each do |donor| %>
+    <li id="orderable_<%= donor.id %>">
+      <%= donor.name %>
+    </li>
+  <% end %>
+  
+</ul>
+
+<button id="orderable_donors_save" class="orderable_button">Save</button>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#orderable_donors').sortable({
+      opacity: 0.8,
+      placeholder: 'placeholder'
+    });
+    
+    $('#orderable_donors_save').click(function(){
+      var array = $('#orderable_donors').sortable('toArray');
+      
+      var form = $('<form>')
+        .attr('method', 'post')
+        .attr('action', '<%= reorder_save_admin_donors_path %>')
+        .css('display', 'none')
+        .appendTo('body')
+        
+      $.each(array, function(i, item){
+        $('<input>')
+          .attr('name', 'donors[]')
+          .val(item.replace(/orderable_/, "") )
+          .appendTo(form)
+      })
+      
+      $.facebox('Please wait...')  
+      
+      form.submit()
+    })
+  })
+</script>

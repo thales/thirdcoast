@@ -1,0 +1,11 @@
+<div class="static_resound_wrapper">
+<div class="content-block-wrapper"style="padding:20px 0 0 0;">
+  <div class="home-text">
+    <h1>This week on Re:sound</h1>
+    <p class="sub-header"> <%= feature.title %> </p>
+    <p class="body"> <%= truncate_feature_description feature %></p>
+    <p class="clearfix"><%= link_to "", player_path(feature), :rel => 'playerPopup', :class => "listen_link" %></p>
+  </div>
+    <%= image_tag feature.primary_image %>
+</div>
+</div>

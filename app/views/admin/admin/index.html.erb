@@ -1,0 +1,37 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+
+<div id="centered">
+  
+<ul>
+  <li><%= link_to "Manage Admin users", admin_users_path if current_user.super_admin?%></li>
+  <li><%= link_to "Features", admin_features_path %></li>
+  <li><%=  link_to "Producers", admin_producers_path %></li>
+  <li><%= link_to "Collections", admin_collections_path %></li>
+  <li><%= link_to "Categories", admin_categories_path %></li>
+  <li><%= link_to "Tags", admin_tags_path %></li>
+  <li><%= link_to "Competitions", admin_competitions_path %></li>
+  <li><%= link_to "Weekly Spotlight", admin_spotlights_path %></li>
+  <li><%= link_to "Re:sound Airings", admin_airings_path %></li>
+  <li><%= link_to "Corporate Donors", admin_donors_path %></li>
+  <li><%= link_to "Events", admin_events_path %></li>
+  <li><%= link_to "News", admin_news_items_path %></li>
+  <li><%= link_to "Store", admin_store_items_path %></li>
+  <li><%= link_to "Staff Picks", admin_staff_picks_path %></li>
+  <li><%= link_to "Menu", admin_menu_index_path %></li>
+  <li><%= link_to "Pages", admin_pages_path %></li>
+  <li><%= link_to "Page Templates", admin_page_templates_path %></li>
+  <li><%= link_to "Podcast", admin_podcast_items_path %></li>
+  <li><%= link_to "Misc. Audio Files", admin_misc_audio_files_path %></li>
+  <li><%= link_to "Misc. Images", admin_misc_images_path %></li>
+  <li><%= link_to "Homepage Sidebar Tiles", admin_side_bar_tiles_path %></li>
+</ul>
+
+</div>
+
+
+
+
+
+

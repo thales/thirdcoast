@@ -1,0 +1,391 @@
+<% content_for :head do %>
+<script type="text/javascript"
+ src="http://api.recaptcha.net/js/recaptcha_ajax.js"></script>
+<% end %>
+<% content_for :audio do  %>
+<script>
+ var totalSongLength = 0;
+ var defaultVolume = 90;
+ var player_id = <%= @feature.id %>;
+ var draggable = false;
+ var resetLeft = false;
+  if (!window.sizeToContent) {
+  window.sizeToContent = function() {
+      var innerX,innerY;
+      if (self.innerHeight) {
+          // all except Explorer
+          innerX = self.innerWidth;
+          innerY = self.innerHeight;
+      } else if (document.documentElement && document.documentElement.clientHeight) {
+          // Explorer 6 Strict Mode
+          innerX = document.documentElement.clientWidth;
+          innerY = document.documentElement.clientHeight;
+      } else if (document.body) {
+          // other Explorers
+          innerX = document.body.clientWidth;
+          innerY = document.body.clientHeight;
+      }
+     
+      var pageX,pageY;
+      var test1 = document.body.scrollHeight;
+      var test2 = document.body.offsetHeight
+      if (test1 > test2) {
+          // all but Explorer Mac
+          pageX = document.body.scrollWidth;
+          pageY = document.body.scrollHeight;
+      } else {
+          // Explorer Mac;
+          //would also work in Explorer 6 Strict, Mozilla and Safari
+          pageX = document.body.offsetWidth;
+          pageY = document.body.offsetHeight;
+      }
+      window.resizeBy(pageX - innerX, pageY - innerY);
+  };
+  }
+$(document).ready(function() {
+    window.sizeToContent();
+  <% unless @feature.audio_file.nil? %>
+  var i = 0;
+  
+  // $('#play_download').hover(
+  //       function() {
+  //           $(this).toggleClass("active");
+  //       };
+  // );
+  
+  $('#play_share').mouseenter(
+        function() {
+            $(this).addClass("active");
+            $("#share-item").show();
+        }
+  );
+  $('#play_share').mouseleave(
+        function() {
+            $(this).removeClass("active");
+            $("#share-item").hide();
+        }
+  );
+
+
+  $("#jquery_jplayer").jPlayer({
+    ready: function () {
+      var player = this;
+        
+      setTimeout(function(){
+        player.setFile("<%= server_path %>/mp3s/<%= @feature.audio_file.id.to_s %>/<%= @feature.audio_file.mp3_file_name %>")
+
+
+        }, 1000)
+    },
+    oggSupport: false,
+    customCssIds: true,
+    swfPath: "/javascripts"
+  })
+  .jPlayer('cssId', 'play', "player_play")
+  .jPlayer('cssId', 'pause', "player_pause")
+  .jPlayer('cssId', 'playBar', "play_progress_current")
+  .jPlayer('onProgressChange', function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
+    if(playedTime == 0){
+      return false;
+    } else {
+        if(i == 0) {
+            //console.log('calling css javascript');
+            $('#play_time').css('background-position','-116px -17px');
+            $('#total_time').css('background-position','-156px -17px');
+            i++;
+        }
+    }
+   
+        $("#play_time").text(secsToNice(playedTime, " "));
+        // alert(loadPercent);
+        if(loadPercent < 100){
+            totalSongLength = -1
+            if(loadPercent == 0){
+                $("#total_time").text('-');
+            }else{
+                $("#total_time").text(Math.round(loadPercent)+'%');
+            }
+        }else{
+            
+          if(!draggable){
+            // alert($('#play_time').offset().left);
+            $('#play_time').draggable({
+              axis: 'x',
+              containment: '#play_progress',
+              stop: function(){
+                var total = $('#play_progress').width();
+                var clicked = $('#play_time').offset().left - 115;
+            var softener = clicked * 42 / total;
+              
+            var clicked = clicked + softener;
+              
+                var jumpToPercent = clicked/total*100;
+   
+                var jumpToMinute = totalSongLength/100 * jumpToPercent;
+   
+            resetLeft = true;
+                $("#jquery_jplayer").jPlayer("playHeadTime", jumpToMinute)
+              }
+            })
+              
+            draggable = true;
+          }
+          // else {
+          //   alert("he");
+          // }
+
+          if(resetLeft){
+            $('#play_time').css('left', '0');
+            resetLeft = false;
+          }
+        
+          $("#total_time").text(secsToNice(totalTime, " "));
+ 
+          totalSongLength = totalTime;
+ 
+        }
+   
+          
+        var width = $('#play_progress').width();
+   
+        var margin = (width-37)/100 * playedPercentAbsolute;
+   
+        $('#play_time').css('margin-left',margin+'px')
+  });
+    
+  $('#player_volume_max').click(function(){
+      if(defaultVolume < 100){
+          defaultVolume = defaultVolume + 10;
+          $('#jquery_jplayer').jPlayer('volume', defaultVolume)
+      }
+  });
+    
+  $('#player_volume_min').click(function(){
+      if(defaultVolume > 0){
+          defaultVolume = defaultVolume - 10;
+      }
+        
+      $('#jquery_jplayer').jPlayer('volume', defaultVolume)
+  });
+    
+    $('#play_progress, #play_progress_current').click(function(e){
+        if(totalSongLength == -1){
+              
+        }else{
+            var total = $('#play_progress').width();
+            var clicked = e.pageX - $(this).offset().left
+   
+            var jumpToPercent = clicked/total*100;
+   
+            var jumpToMinute = totalSongLength/100 * jumpToPercent;
+   
+            $("#jquery_jplayer").jPlayer("playHeadTime", jumpToMinute)
+        }
+    })
+      
+    <% end %>
+   
+    $('#photo_container').imageViewerWebsite(<%= @feature.feature_photos.find(:all, :order => "feature_photos.primary DESC").map{|photo|
+                      {:credit => photo.caption, :url => photo.photo.url(:small), :maximum_url => photo.photo.url(:maximum)} }.to_json%>, {"sensetiveContainer":true});
+   
+      
+    // $('#play_share').droppy();
+      
+});
+   
+</script>
+<% end  %>
+   
+<div class="container">
+    <div class="home_link">
+        <%= link_to 'THIRD COAST INTERNATIONAL AUDIO FESTIVAL', root_url%>
+    </div>
+<div class="featureInfo">
+    <div class="rowWrapper">
+      <div class="leftCol"><p>Title</p></div>
+      <div class="rightCol featureTitle"><%= @feature.title %></div>
+    </div>
+    <div class="rowWrapper">
+      <div class="leftCol">Produced</div>
+      <div class="rightCol producers">
+        <% unless @feature.producers.empty? %>
+           <%= @feature.producers.collect(&:name).to_sentence %>
+        <% end -%>
+      </div>
+    </div>
+      <div class="rowWrapper">
+        <div class="leftCol"><p>Presented</p></div>
+        <div class="rightCol copy">
+            <%= @feature.premier_locaction %>, <%= @feature.origin_country %>, <%= @feature.premier_date %>
+        </div>
+      </div>
+      <div class="rowWrapper">
+        <div class="leftCol">Collection</div>
+        <div class="rightCol copy">
+          <% unless @feature.collections.empty? %>
+            <%= @feature.collections.collect{|u| u.name}.join(', ') %>                 
+           <% end -%>
+        </div>
+      </div>
+      <div class="rowWrapper">
+        <div class="leftCol">Tags</div>
+        <div class="rightCol copy">
+          <% unless @feature.tags.empty? %>
+            <%= tags_separated(@feature.tags) %>
+         <% end -%>
+        </div>
+      </div>
+  </div>  
+   
+  <div class="boxgrid">
+        <div id="photo_container">
+          <a href=<% @feature.primary_image(:maximum) %> rel="lightbox"><%= image_tag(@feature.primary_image(:small)) %></a>
+        </div>
+  </div>
+   
+<% unless @print %>
+  <% unless @feature.audio_file.nil? %>
+    <div id="jquery_jplayer"></div>
+    <div class="player_container <%= "downloadable" if @feature.audio_file.downloadable %>">
+        <div id="player_play"></div>
+        <div id="player_pause"></div>
+      
+        <div id="player_volume_max"></div>
+        <div id="player_volume_min"></div>
+      
+        <div id="play_progress">
+            <div id="play_time"><%= toHHMM @feature.audio_file.duration, true, " " %></div>
+        </div>
+        <div id="total_time"></div>
+      <div id="play_print" class="play_small_button"></div>
+      <div id="play_download" class="play_small_button" <%= @feature.audio_file.downloadable ? 'rel="'+@feature.audio_file.mp3.url+'"' : nil %> ></div>
+      <div id="play_share" class="play_small_button">
+       
+          <div id="share-item">
+             <ul id="share-tree">
+                <li class="share-node" id="share-node-facebook">
+                  <a href="http://www.facebook.com/share.php?u=<%= player_url(@feature) %>&t=<%= @feature.title %>" class="share-item">&nbsp;</a>
+                </li>
+                <li class="share-node" id="share-node-twitter">
+                  <a href="http://www.twitter.com/?status=<%= player_url(@feature) %>" class="share-item">&nbsp;</a>
+                </li>
+                <li class="share-node" id="share-node-email">
+                  <a href="mailto:?subject=Third Coast Festival Web Site&body=http://www.thirdcoastfestival.org/<%= request.request_uri %>" class="share-item">&nbsp;</a>
+                </li>
+            </ul>
+          </div>
+  
+      </div>
+    </div>
+  <% else %>
+    <div class="no_file_message">No audio file available</div>
+  <% end  %>
+<% end %>
+   
+<div class="contentContainer">
+  <div class="sectionWrapper">
+   
+    <h2 class="sectionHeader">Story</h2>
+    <div class="section">
+      <%= @feature.description %>
+    </div>
+  </div>
+  <div class="sectionWrapper">
+   
+    <h2 class="sectionHeader">Producer</h2>
+    <div class="section">
+      <% unless @feature.producers.empty? %>
+      <% @feature.producers.each do |p| %>
+      <div class="producer">
+      <%= p.bio %>
+      </div>
+     <% end -%>
+     <% end-%>
+    </div>
+  </div>
+ <div class="sectionWrapper">
+   <h2 class="sectionHeader">Extra</h2>
+    <div class="section">
+      <div>
+   
+      <% unless @feature.extra.links_block.nil? %>
+        <%= @feature.extra.links_block %>
+      <% end -%>
+      </div>
+     <div>
+   
+      <% unless @feature.extra.extra_audio_files.empty? %>
+        <ul>
+        <% @feature.extra.extra_audio_files.each do |audio_file| %>
+          <li><span><%= link_to audio_file.name, audio_file.mp3.url, :rel => "mini_player", :pre_length => audio_file.length %></span> <%= audio_file.description %></li>
+        <% end %>
+        </ul>
+      <% end  %>
+     </div>
+   
+   <% unless @feature.extra.behind_the_scene_text.nil? %>
+      <%= @feature.extra.behind_the_scene_text %>
+   <% end -%>
+   </div>
+ </div>
+ <div class="sectionWrapper">
+   
+   <h2 class="sectionHeader">Comments</h2>
+    <div id="comments_section" class="section">
+      <% unless @print %>
+        <div class="new_comment_link">
+          <% if @feature.comments.size < 1 %>
+            <%= link_to 'Be the first to add a comment', '#new_comment', :rel => 'facebox', :class => "link", :id => "jq_comment_link" %>
+          <% else %>
+          <%= link_to 'Add new comment', '#new_comment', :rel => 'facebox', :class => "link", :id => "jq_comment_link" %>
+          <% end %>
+        </div>
+      <% end %>
+        
+        <div id="new_comment" style="display:none;">
+          <% form_for :comment, :html => {:id => 'new_comment'} do |form| -%>
+            <div>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+            </div>
+            <div>
+            <%= form.label :location %>
+            <%= form.text_field :location %>
+            </div>
+            <div>
+            <%= form.label :comment %>
+            <%= form.text_area :comment, :maxlength => 140, :placeholder => 'Your comment...' %>
+            <br/>
+            <div class="new_comment_chars_count">
+              <span class="new_comment_chars_count_integer">140</span> characters left
+            </div>
+            </div>
+            <!-- <div id="recaptcha_container">
+            </div> -->
+            <!-- <%= recaptcha_tags %> -->
+            <%= form.submit "Post a Comment" %>
+          <% end %>
+        </div>
+        
+        <div id="comments">
+          <%= render 'comments' %>
+        </div>
+      <% unless @print %>
+        <!-- Sharing links container -->
+        <div class="share_container" style="display:none">
+          Share this on:<br>
+          <%= image_tag ("share/fb.gif") %><a href="http://www.facebook.com/share.php?u=<%= player_url(@feature) %>&t=<%= @feature.title %>">FaceBook</a>
+          <br>
+          <%= image_tag ("share/twitter.gif") %><a href="http://www.twitter.com/?status=<%= player_url(@feature) %>">Twitter</a>
+          <br>
+          <%= image_tag ("share/digg.gif") %><a href="http://digg.com/submit?phase=2&url=<%= player_url(@feature) %>&title=<%= @feature.title %>">Digg</a>
+          <br>
+          <%= image_tag ("share/stumbleupon.gif") %><a href="http://www.stumbleupon.com/submit?url=<%= player_url(@feature) %>&title=<%= @feature.title %>">StumbleUpon</a>
+          <br>
+        </div>
+      <% end %>
+        
+    </div>
+    </div>
+ </div>
+</div>

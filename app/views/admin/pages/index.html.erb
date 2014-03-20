@@ -1,0 +1,16 @@
+<% content_for :stylesheets do %>
+  #leftCol {display: none}
+<% end -%>
+<div class="rightCol">
+  <br>
+  <%= link_to 'New page', new_admin_page_path, :id => "new_page_link", :class => "floatRight"   %>
+  <br/>
+  <div id="pages_table">    
+
+    <% @pages.each do |page| %>
+      <%= render "page_small", :page => page, :level => 0 %>
+    <% end %>
+    
+    <div style="clear:both"></div>
+  </div>
+</div>

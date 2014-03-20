@@ -1,0 +1,25 @@
+<div class="rightCol">
+
+
+<h1>Edit award</h1>
+
+<% form_for @award, :url => admin_competition_edition_award_path(params[:competition_id], params[:edition_id], @award) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+    <%= f.label :feature_name %><br />
+    <%= f.text_field :feature_name %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_competition_edition_path(params[:competition_id], params[:edition_id]) %> |
+<%= link_to 'Cancel', admin_competition_editions_path(params[:competition_id]) %>
+</div>

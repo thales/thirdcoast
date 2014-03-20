@@ -1,0 +1,6 @@
+<ul id="<%= current_page?(root_path)  ? "main_menu-home" : "main_menu-non-home"  %>" class="main_menu">
+  <% root_menu_items.each do |item| %>
+    <li><%= link_to item.title, "/#{item.path}", :class => (opened_top?(item) ? 'selected' : ''), :alt => item.alternative_title.to_s %></li>
+  <% end %>
+</ul>
+<%= image_tag("pigeon.png", :id => "print_logo") %>
