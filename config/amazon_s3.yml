@@ -1,0 +1,15 @@
+development:
+    access_key_id: AKIAIE5YDA5YGLF2LB3A
+    secret_access_key: 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
+  
+staging:
+  access_key_id: AKIAJNAUXY7573VSR5VA
+  secret_access_key: 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
+
+test:
+  access_key_id: AKIAJNAUXY7573VSR5VA
+  secret_access_key: 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
+
+production:
+  access_key_id: AKIAIE5YDA5YGLF2LB3A
+  secret_access_key: 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

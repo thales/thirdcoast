@@ -1,0 +1,11 @@
+indexer
+{
+}
+
+searchd
+{
+  listen = 127.0.0.1:3312
+  log = /var/www/3rdCoastFestival/releases/last/log/searchd.log
+  query_log = /var/www/3rdCoastFestival/releases/last/log/searchd.query.log
+  pid_file = /var/www/3rdCoastFestival/releases/last/log/searchd.development.pid
+}

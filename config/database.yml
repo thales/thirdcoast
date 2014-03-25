@@ -1,0 +1,55 @@
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+#
+# Install the MySQL driver:
+#   gem install mysql
+# On Mac OS X:
+#   sudo gem install mysql -- --with-mysql-dir=/usr/local/mysql
+# On Mac OS X Leopard:
+#   sudo env ARCHFLAGS="-arch i386" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+#       This sets the ARCHFLAGS environment variable to your native architecture
+# On Windows:
+#   gem install mysql
+#       Choose the win32 build.
+#       Install MySQL and put its /bin directory on your path.
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: 3rdcoastfestival_development
+  pool: 5
+  username: root
+  password: 
+  socket: /var/run/mysqld/mysqld.sock  
+  
+staging:
+  adapter: mysql
+  encoding: utf8
+  reconnect: true
+  database: thirdcoast_staging
+  pool: 5
+  username: thirdcoast
+  password: 9lggXHvjEHeAMJJiaciqNxV31zTostAV
+  host: 10.182.227.151
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: 3rdCoastFestival_test
+  pool: 5
+  username: root
+  password: zphaf96mo2tM-  
+  socket: /var/run/mysqld/mysqld.sock 
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: 3rdcoastfestival_production
+  pool: 5
+  username: apps
+  password: P7AZ8f9JZhKWSQEv0zF2
+  socket: /var/run/mysqld/mysqld.sock
